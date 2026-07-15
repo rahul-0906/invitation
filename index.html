@@ -830,6 +830,21 @@
       .sec, #welcome, #parents, #countdown, #venue, #hashtag { padding: 4.5rem 1.25rem; }
       #verse, #events, #audio-sec { padding: 4.5rem 1.25rem; }
 
+      /* Responsive Typography Scaling for Tablets */
+      .hero-title { font-size: clamp(2.4rem, 8vw, 4.2rem); }
+      .hero-name-gr { font-size: clamp(2.2rem, 6.5vw, 3.6rem); }
+      .hero-parent-info { font-size: 0.85rem; }
+      .sec-title { font-size: clamp(1.5rem, 5.5vw, 2.2rem); }
+      .welcome-body p { font-size: 0.95rem; line-height: 1.85; }
+      .verse-ta { font-size: 1.05rem; line-height: 2.2; }
+      .verse-roman { font-size: 0.85rem; line-height: 1.95; }
+      .verse-en { font-size: 0.95rem; line-height: 1.85; }
+      .event-date { font-size: 1.6rem; }
+      .venue-name { font-size: 1.3rem; }
+      .venue-addr { font-size: 0.88rem; line-height: 1.8; }
+      .audio-song-title { font-size: 2rem; }
+      .hashtag-text { font-size: 2.2rem; }
+
       .parents-grid { grid-template-columns: 1fr; gap: 2.5rem 0; }
       .parents-sep  { display: none; }
 
@@ -849,6 +864,19 @@
     }
 
     @media (max-width: 480px) {
+      /* Mobile Typography Fine-tuning */
+      .hero-title { font-size: 2.2rem; }
+      .hero-name-gr { font-size: 2rem; }
+      .hero-amp { font-size: 1.4rem; margin: 0.1rem 0; }
+      .hero-badge { font-size: 0.6rem; padding: 0.4rem 1.2rem; letter-spacing: 0.15em; }
+      .sec-title { font-size: 1.4rem; }
+      .welcome-body p { font-size: 0.9rem; line-height: 1.75; }
+      .verse-ta { font-size: 0.95rem; line-height: 2.1; }
+      .verse-roman { font-size: 0.8rem; line-height: 1.8; }
+      .verse-en { font-size: 0.88rem; line-height: 1.75; }
+      .hashtag-text { font-size: 1.8rem; }
+      .footer-hashtag-text { font-size: 1.5rem; }
+
       .cdown-sep  { display: none; }
       .venue-card { padding: 2rem 1rem; }
       .hero-verse { padding: 1rem; }
