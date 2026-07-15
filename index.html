@@ -1594,9 +1594,11 @@
           // Clean up first-interaction listeners
           document.removeEventListener('click', attemptAutoplay);
           document.removeEventListener('touchstart', attemptAutoplay);
+          document.removeEventListener('scroll', attemptAutoplay);
+          document.removeEventListener('keydown', attemptAutoplay);
         })
         .catch(function(err) {
-          console.log('Autoplay blocked by browser policy, waiting for user click.', err);
+          console.log('Autoplay blocked by browser policy, waiting for user interaction.', err);
         });
     }
 
@@ -1606,9 +1608,11 @@
       setTimeout(attemptAutoplay, 800);
     });
 
-    // Fallback: Play on user's first click/touch interaction anywhere
+    // Fallback: Play on user's first touch, click, scroll, or keypress anywhere
     document.addEventListener('click', attemptAutoplay);
     document.addEventListener('touchstart', attemptAutoplay);
+    document.addEventListener('scroll', attemptAutoplay);
+    document.addEventListener('keydown', attemptAutoplay);
   </script>
 </body>
 </html>
