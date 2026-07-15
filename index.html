@@ -616,15 +616,19 @@
     /* ===========================
        VENUE
     =========================== */
-    #venue { background: var(--cream); text-align: center; }
+    #venue { background: var(--maroon); text-align: center; }
+    #venue .sec-tag   { color: rgba(226,192,124,0.58); }
+    #venue .sec-title { color: var(--gold-lt); }
+    #venue .sec-sub   { color: rgba(245,239,230,0.55); }
 
     .venue-card {
       max-width: 520px;
       margin: 2.5rem auto 0;
       padding: 2.8rem 2.5rem;
-      border: 1px solid rgba(201,151,62,0.26);
+      border: 1px solid rgba(201,151,62,0.24);
       border-radius: var(--r-lg);
-      background: rgba(201,151,62,0.04);
+      background: rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(2px);
     }
 
     .venue-icon { width: 52px; height: 52px; margin: 0 auto 1.2rem; display: block; }
@@ -633,14 +637,14 @@
       font-family: var(--f-head);
       font-size: clamp(1.25rem, 3vw, 1.8rem);
       font-weight: 600;
-      color: var(--maroon);
+      color: var(--cream);
       margin-bottom: 0.5rem;
     }
 
     .venue-addr {
       font-family: var(--f-body);
       font-size: 0.95rem;
-      color: var(--charcoal-l);
+      color: rgba(245,239,230,0.65);
       line-height: 1.9;
       margin-bottom: 2rem;
     }
@@ -650,8 +654,8 @@
       align-items: center;
       gap: 0.55rem;
       padding: 0.85rem 2.2rem;
-      background: var(--maroon);
-      color: var(--cream);
+      background: var(--gold);
+      color: var(--maroon);
       font-family: var(--f-head);
       font-size: 0.7rem;
       letter-spacing: 0.18em;
@@ -665,9 +669,9 @@
     }
 
     .map-btn:hover {
-      background: var(--maroon-d);
+      background: var(--gold-lt);
       transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(123,26,36,0.32);
+      box-shadow: 0 6px 18px rgba(201,151,62,0.3);
     }
 
     /* ===========================
@@ -1047,9 +1051,8 @@
       <h2 class="sec-title fu d1 tc">Theiveega Sannidhi</h2>
       <p class="sec-sub fu d1 tc">The Divine Sanctum</p>
       <div class="venue-card fu d2">
-        <!-- Lotus mandala venue icon -->
         <svg class="venue-icon" viewBox="0 0 52 52" fill="none" aria-hidden="true">
-          <g stroke="#7B1A24" stroke-width="1" fill="none">
+          <g stroke="#C9973E" stroke-width="1" fill="none">
             <circle cx="26" cy="26" r="24"/>
             <circle cx="26" cy="26" r="18" stroke-dasharray="3,4"/>
             <circle cx="26" cy="26" r="10"/>
@@ -1061,7 +1064,7 @@
             <ellipse cx="26" cy="26" rx="3.5" ry="8.5" transform="rotate(225,26,26) translate(0,-14)"/>
             <ellipse cx="26" cy="26" rx="3.5" ry="8.5" transform="rotate(270,26,26) translate(0,-14)"/>
             <ellipse cx="26" cy="26" rx="3.5" ry="8.5" transform="rotate(315,26,26) translate(0,-14)"/>
-            <circle cx="26" cy="26" r="3" fill="rgba(123,26,36,0.25)" stroke="none"/>
+            <circle cx="26" cy="26" r="3" fill="rgba(201,151,62,0.3)" stroke="none"/>
           </g>
         </svg>
         <h3 class="venue-name">Thaibala Wedding Hall</h3>
