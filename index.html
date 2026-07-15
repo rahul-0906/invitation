@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Tiro+Tamil&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><circle cx='100' cy='100' r='98' fill='%23F5EFE6'/><circle cx='100' cy='100' r='96' fill='none' stroke='%23C9973E' stroke-width='1.5'/><text x='74' y='108' font-family='Cinzel, serif' font-size='36' font-weight='600' fill='%23C9973E' text-anchor='middle' dominant-baseline='middle'>R</text><text x='100' y='106' font-family='Cinzel, serif' font-size='14' fill='%23C9973E' text-anchor='middle' dominant-baseline='middle' opacity='0.6'>&amp;</text><text x='126' y='108' font-family='Cinzel, serif' font-size='36' font-weight='600' fill='%23C9973E' text-anchor='middle' dominant-baseline='middle'>S</text></svg>" />
   <style>
     /* ===========================
        DESIGN TOKENS
@@ -1421,7 +1421,55 @@
     </svg>
     <!-- R&S Circular Lotus Mandala Monogram -->
     <div class="footer-logo">
-      <img src="logo.png" alt="R and S wedding monogram logo" style="border-radius: 50%; width: 100%; height: 100%; object-fit: cover;" />
+      <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
+           role="img" aria-label="R and S wedding monogram encircled by a lotus mandala in gold on cream">
+        <defs>
+          <radialGradient id="logoGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%"   stop-color="#F5EFE6"/>
+            <stop offset="100%" stop-color="#E8DDCA"/>
+          </radialGradient>
+        </defs>
+        <circle cx="100" cy="100" r="98" fill="url(#logoGrad)"/>
+        <circle cx="100" cy="100" r="96" fill="none" stroke="#C9973E" stroke-width="1.5"/>
+        <circle cx="100" cy="100" r="91" fill="none" stroke="#C9973E" stroke-width="0.5"/>
+        <!-- Outer 8-petal lotus ring -->
+        <g transform="translate(100,100)">
+          <ellipse rx="11" ry="24" fill="rgba(201,151,62,0.12)" stroke="#C9973E" stroke-width="1"   transform="rotate(0)   translate(0,-68)"/>
+          <ellipse rx="11" ry="24" fill="rgba(201,151,62,0.08)" stroke="#C9973E" stroke-width="0.8" transform="rotate(45)  translate(0,-68)"/>
+          <ellipse rx="11" ry="24" fill="rgba(201,151,62,0.12)" stroke="#C9973E" stroke-width="1"   transform="rotate(90)  translate(0,-68)"/>
+          <ellipse rx="11" ry="24" fill="rgba(201,151,62,0.08)" stroke="#C9973E" stroke-width="0.8" transform="rotate(135) translate(0,-68)"/>
+          <ellipse rx="11" ry="24" fill="rgba(201,151,62,0.12)" stroke="#C9973E" stroke-width="1"   transform="rotate(180) translate(0,-68)"/>
+          <ellipse rx="11" ry="24" fill="rgba(201,151,62,0.08)" stroke="#C9973E" stroke-width="0.8" transform="rotate(225) translate(0,-68)"/>
+          <ellipse rx="11" ry="24" fill="rgba(201,151,62,0.12)" stroke="#C9973E" stroke-width="1"   transform="rotate(270) translate(0,-68)"/>
+          <ellipse rx="11" ry="24" fill="rgba(201,151,62,0.08)" stroke="#C9973E" stroke-width="0.8" transform="rotate(315) translate(0,-68)"/>
+        </g>
+        <!-- Inner 8-petal ring (offset 22.5°) -->
+        <g transform="translate(100,100)">
+          <ellipse rx="8" ry="16" fill="rgba(201,151,62,0.09)" stroke="#C9973E" stroke-width="0.75" transform="rotate(22.5)  translate(0,-50)"/>
+          <ellipse rx="8" ry="16" fill="rgba(201,151,62,0.09)" stroke="#C9973E" stroke-width="0.75" transform="rotate(67.5)  translate(0,-50)"/>
+          <ellipse rx="8" ry="16" fill="rgba(201,151,62,0.09)" stroke="#C9973E" stroke-width="0.75" transform="rotate(112.5) translate(0,-50)"/>
+          <ellipse rx="8" ry="16" fill="rgba(201,151,62,0.09)" stroke="#C9973E" stroke-width="0.75" transform="rotate(157.5) translate(0,-50)"/>
+          <ellipse rx="8" ry="16" fill="rgba(201,151,62,0.09)" stroke="#C9973E" stroke-width="0.75" transform="rotate(202.5) translate(0,-50)"/>
+          <ellipse rx="8" ry="16" fill="rgba(201,151,62,0.09)" stroke="#C9973E" stroke-width="0.75" transform="rotate(247.5) translate(0,-50)"/>
+          <ellipse rx="8" ry="16" fill="rgba(201,151,62,0.09)" stroke="#C9973E" stroke-width="0.75" transform="rotate(292.5) translate(0,-50)"/>
+          <ellipse rx="8" ry="16" fill="rgba(201,151,62,0.09)" stroke="#C9973E" stroke-width="0.75" transform="rotate(337.5) translate(0,-50)"/>
+        </g>
+        <circle cx="100" cy="100" r="40" fill="none" stroke="#C9973E" stroke-width="0.75" stroke-dasharray="2.5,3.5"/>
+        <circle cx="100" cy="100" r="35" fill="none" stroke="#C9973E" stroke-width="0.5"/>
+        <circle cx="100" cy="30"  r="3" fill="#C9973E"/>
+        <circle cx="170" cy="100" r="3" fill="#C9973E"/>
+        <circle cx="100" cy="170" r="3" fill="#C9973E"/>
+        <circle cx="30"  cy="100" r="3" fill="#C9973E"/>
+        <polygon points="100,35 104,41 100,47 96,41" fill="#C9973E"/>
+        <polygon points="100,35 104,41 100,47 96,41" fill="#C9973E" transform="rotate(90,100,100)"/>
+        <polygon points="100,35 104,41 100,47 96,41" fill="#C9973E" transform="rotate(180,100,100)"/>
+        <polygon points="100,35 104,41 100,47 96,41" fill="#C9973E" transform="rotate(270,100,100)"/>
+        <circle cx="100" cy="100" r="33" fill="rgba(201,151,62,0.06)"/>
+        <!-- Monogram R & S -->
+        <text x="74"  y="108" font-family="Cinzel, serif" font-size="36" font-weight="600" fill="#C9973E" text-anchor="middle" dominant-baseline="middle">R</text>
+        <text x="100" y="106" font-family="Cinzel, serif" font-size="14" fill="#C9973E" text-anchor="middle" dominant-baseline="middle" opacity="0.60">&amp;</text>
+        <text x="126" y="108" font-family="Cinzel, serif" font-size="36" font-weight="600" fill="#C9973E" text-anchor="middle" dominant-baseline="middle">S</text>
+      </svg>
     </div>
 
     <p class="footer-info-text">Kanaa Kanden &middot; An Andal Kalyanam &middot; 2026</p>
