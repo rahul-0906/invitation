@@ -179,8 +179,8 @@
       height: 80vh;
       width: auto;
       pointer-events: none;
-      opacity: 0.12;
-      filter: drop-shadow(0 0 12px rgba(201,151,62,0.15));
+      opacity: 0.18; /* Darkened from 0.12 for more visibility */
+      filter: drop-shadow(0 0 12px rgba(201,151,62,0.25));
     }
 
     /* Garland top swag */
@@ -339,8 +339,10 @@
        ANDAL VERSE
     =========================== */
     #verse {
+      position: relative;
       background: var(--maroon);
       padding: 6rem 1.5rem;
+      overflow: hidden;
     }
 
     #verse .sec-tag   { color: rgba(226,192,124,0.65); }
@@ -618,7 +620,7 @@
     /* ===========================
        VENUE
     =========================== */
-    #venue { background: var(--maroon); text-align: center; }
+    #venue { position: relative; background: var(--maroon); text-align: center; overflow: hidden; }
     #venue .sec-tag   { color: rgba(226,192,124,0.58); }
     #venue .sec-title { color: var(--gold-lt); }
     #venue .sec-sub   { color: rgba(245,239,230,0.55); }
@@ -777,9 +779,11 @@
        FOOTER
     =========================== */
     #footer {
+      position: relative;
       background: var(--maroon);
       padding: 5.5rem 1.5rem 3rem;
       text-align: center;
+      overflow: hidden;
     }
 
     .footer-super {
@@ -978,6 +982,62 @@
        ANDAL VERSE
   ==================================================== -->
   <section id="verse">
+    <!-- Right-side Gopuram SVG accent -->
+    <svg class="gopuram" viewBox="0 0 160 720" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation">
+      <g stroke="#C9973E" stroke-width="1.2" fill="none" stroke-linecap="round">
+        <ellipse cx="80" cy="14" rx="8" ry="12"/>
+        <line x1="80" y1="26" x2="80" y2="36"/>
+        <polygon points="80,36 56,62 104,62"/>
+        <polygon points="80,40 62,60 98,60" fill="rgba(201,151,62,0.15)"/>
+        <rect x="50" y="62" width="60" height="24" rx="2"/>
+        <line x1="50" y1="74" x2="110" y2="74"/>
+        <rect x="54" y="64" width="10" height="12" rx="2"/>
+        <rect x="68" y="64" width="10" height="12" rx="2"/>
+        <rect x="82" y="64" width="10" height="12" rx="2"/>
+        <rect x="96" y="64" width="10" height="12" rx="2"/>
+        <rect x="38" y="86" width="84" height="28" rx="2"/>
+        <line x1="38" y1="100" x2="122" y2="100"/>
+        <rect x="42" y="88" width="11" height="15" rx="2"/>
+        <rect x="57" y="88" width="11" height="15" rx="2"/>
+        <rect x="72" y="88" width="11" height="15" rx="2"/>
+        <rect x="87" y="88" width="11" height="15" rx="2"/>
+        <rect x="102" y="88" width="11" height="15" rx="2"/>
+        <rect x="22" y="114" width="116" height="32" rx="2"/>
+        <line x1="22" y1="130" x2="138" y2="130"/>
+        <rect x="26" y="116" width="12" height="18" rx="2"/>
+        <rect x="42" y="116" width="12" height="18" rx="2"/>
+        <rect x="58" y="116" width="12" height="18" rx="2"/>
+        <rect x="74" y="116" width="12" height="18" rx="2"/>
+        <rect x="90" y="116" width="12" height="18" rx="2"/>
+        <rect x="106" y="116" width="12" height="18" rx="2"/>
+        <rect x="122" y="116" width="12" height="18" rx="2"/>
+        <rect x="8" y="146" width="144" height="38" rx="2"/>
+        <line x1="8" y1="165" x2="152" y2="165"/>
+        <rect x="0" y="184" width="160" height="10"/>
+        <rect x="0" y="194" width="160" height="260"/>
+        <path d="M52,454 L52,320 Q52,298 80,298 Q108,298 108,320 L108,454" stroke-width="1.5"/>
+        <rect x="6" y="200" width="22" height="248" rx="2"/>
+        <circle cx="17" cy="212" r="5"/>
+        <circle cx="17" cy="234" r="5"/>
+        <circle cx="17" cy="256" r="5"/>
+        <circle cx="17" cy="278" r="5"/>
+        <circle cx="17" cy="300" r="5"/>
+        <rect x="132" y="200" width="22" height="248" rx="2"/>
+        <circle cx="143" cy="212" r="5"/>
+        <circle cx="143" cy="234" r="5"/>
+        <circle cx="143" cy="256" r="5"/>
+        <circle cx="143" cy="278" r="5"/>
+        <circle cx="143" cy="300" r="5"/>
+        <line x1="42" y1="194" x2="42" y2="212"/>
+        <ellipse cx="42" cy="217" rx="5" ry="8"/>
+        <line x1="80" y1="194" x2="80" y2="212"/>
+        <ellipse cx="80" cy="217" rx="5" ry="8"/>
+        <line x1="118" y1="194" x2="118" y2="212"/>
+        <ellipse cx="118" cy="217" rx="5" ry="8"/>
+        <rect x="0" y="454" width="160" height="44"/>
+        <line x1="0" y1="500" x2="160" y2="500" stroke-width="1.5"/>
+      </g>
+    </svg>
     <div class="sec-inner">
       <span class="sec-tag fu">Nachiyar Thirumozhi</span>
       <h2 class="sec-title fu d1">The Sacred Verse</h2>
@@ -1057,6 +1117,62 @@
        2. VENUE (Theiveega Sannidhi)
   ==================================================== -->
   <section id="venue" class="sec">
+    <!-- Right-side Gopuram SVG accent -->
+    <svg class="gopuram" viewBox="0 0 160 720" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation">
+      <g stroke="#C9973E" stroke-width="1.2" fill="none" stroke-linecap="round">
+        <ellipse cx="80" cy="14" rx="8" ry="12"/>
+        <line x1="80" y1="26" x2="80" y2="36"/>
+        <polygon points="80,36 56,62 104,62"/>
+        <polygon points="80,40 62,60 98,60" fill="rgba(201,151,62,0.15)"/>
+        <rect x="50" y="62" width="60" height="24" rx="2"/>
+        <line x1="50" y1="74" x2="110" y2="74"/>
+        <rect x="54" y="64" width="10" height="12" rx="2"/>
+        <rect x="68" y="64" width="10" height="12" rx="2"/>
+        <rect x="82" y="64" width="10" height="12" rx="2"/>
+        <rect x="96" y="64" width="10" height="12" rx="2"/>
+        <rect x="38" y="86" width="84" height="28" rx="2"/>
+        <line x1="38" y1="100" x2="122" y2="100"/>
+        <rect x="42" y="88" width="11" height="15" rx="2"/>
+        <rect x="57" y="88" width="11" height="15" rx="2"/>
+        <rect x="72" y="88" width="11" height="15" rx="2"/>
+        <rect x="87" y="88" width="11" height="15" rx="2"/>
+        <rect x="102" y="88" width="11" height="15" rx="2"/>
+        <rect x="22" y="114" width="116" height="32" rx="2"/>
+        <line x1="22" y1="130" x2="138" y2="130"/>
+        <rect x="26" y="116" width="12" height="18" rx="2"/>
+        <rect x="42" y="116" width="12" height="18" rx="2"/>
+        <rect x="58" y="116" width="12" height="18" rx="2"/>
+        <rect x="74" y="116" width="12" height="18" rx="2"/>
+        <rect x="90" y="116" width="12" height="18" rx="2"/>
+        <rect x="106" y="116" width="12" height="18" rx="2"/>
+        <rect x="122" y="116" width="12" height="18" rx="2"/>
+        <rect x="8" y="146" width="144" height="38" rx="2"/>
+        <line x1="8" y1="165" x2="152" y2="165"/>
+        <rect x="0" y="184" width="160" height="10"/>
+        <rect x="0" y="194" width="160" height="260"/>
+        <path d="M52,454 L52,320 Q52,298 80,298 Q108,298 108,320 L108,454" stroke-width="1.5"/>
+        <rect x="6" y="200" width="22" height="248" rx="2"/>
+        <circle cx="17" cy="212" r="5"/>
+        <circle cx="17" cy="234" r="5"/>
+        <circle cx="17" cy="256" r="5"/>
+        <circle cx="17" cy="278" r="5"/>
+        <circle cx="17" cy="300" r="5"/>
+        <rect x="132" y="200" width="22" height="248" rx="2"/>
+        <circle cx="143" cy="212" r="5"/>
+        <circle cx="143" cy="234" r="5"/>
+        <circle cx="143" cy="256" r="5"/>
+        <circle cx="143" cy="278" r="5"/>
+        <circle cx="143" cy="300" r="5"/>
+        <line x1="42" y1="194" x2="42" y2="212"/>
+        <ellipse cx="42" cy="217" rx="5" ry="8"/>
+        <line x1="80" y1="194" x2="80" y2="212"/>
+        <ellipse cx="80" cy="217" rx="5" ry="8"/>
+        <line x1="118" y1="194" x2="118" y2="212"/>
+        <ellipse cx="118" cy="217" rx="5" ry="8"/>
+        <rect x="0" y="454" width="160" height="44"/>
+        <line x1="0" y1="500" x2="160" y2="500" stroke-width="1.5"/>
+      </g>
+    </svg>
     <div class="sec-inner">
       <span class="sec-tag fu tc">The Sacred Gathering Place</span>
       <h2 class="sec-title fu d1 tc">Theiveega Sannidhi</h2>
@@ -1171,6 +1287,62 @@
        FOOTER + R&S MONOGRAM LOGO
   ==================================================== -->
   <footer id="footer">
+    <!-- Right-side Gopuram SVG accent -->
+    <svg class="gopuram" viewBox="0 0 160 720" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation">
+      <g stroke="#C9973E" stroke-width="1.2" fill="none" stroke-linecap="round">
+        <ellipse cx="80" cy="14" rx="8" ry="12"/>
+        <line x1="80" y1="26" x2="80" y2="36"/>
+        <polygon points="80,36 56,62 104,62"/>
+        <polygon points="80,40 62,60 98,60" fill="rgba(201,151,62,0.15)"/>
+        <rect x="50" y="62" width="60" height="24" rx="2"/>
+        <line x1="50" y1="74" x2="110" y2="74"/>
+        <rect x="54" y="64" width="10" height="12" rx="2"/>
+        <rect x="68" y="64" width="10" height="12" rx="2"/>
+        <rect x="82" y="64" width="10" height="12" rx="2"/>
+        <rect x="96" y="64" width="10" height="12" rx="2"/>
+        <rect x="38" y="86" width="84" height="28" rx="2"/>
+        <line x1="38" y1="100" x2="122" y2="100"/>
+        <rect x="42" y="88" width="11" height="15" rx="2"/>
+        <rect x="57" y="88" width="11" height="15" rx="2"/>
+        <rect x="72" y="88" width="11" height="15" rx="2"/>
+        <rect x="87" y="88" width="11" height="15" rx="2"/>
+        <rect x="102" y="88" width="11" height="15" rx="2"/>
+        <rect x="22" y="114" width="116" height="32" rx="2"/>
+        <line x1="22" y1="130" x2="138" y2="130"/>
+        <rect x="26" y="116" width="12" height="18" rx="2"/>
+        <rect x="42" y="116" width="12" height="18" rx="2"/>
+        <rect x="58" y="116" width="12" height="18" rx="2"/>
+        <rect x="74" y="116" width="12" height="18" rx="2"/>
+        <rect x="90" y="116" width="12" height="18" rx="2"/>
+        <rect x="106" y="116" width="12" height="18" rx="2"/>
+        <rect x="122" y="116" width="12" height="18" rx="2"/>
+        <rect x="8" y="146" width="144" height="38" rx="2"/>
+        <line x1="8" y1="165" x2="152" y2="165"/>
+        <rect x="0" y="184" width="160" height="10"/>
+        <rect x="0" y="194" width="160" height="260"/>
+        <path d="M52,454 L52,320 Q52,298 80,298 Q108,298 108,320 L108,454" stroke-width="1.5"/>
+        <rect x="6" y="200" width="22" height="248" rx="2"/>
+        <circle cx="17" cy="212" r="5"/>
+        <circle cx="17" cy="234" r="5"/>
+        <circle cx="17" cy="256" r="5"/>
+        <circle cx="17" cy="278" r="5"/>
+        <circle cx="17" cy="300" r="5"/>
+        <rect x="132" y="200" width="22" height="248" rx="2"/>
+        <circle cx="143" cy="212" r="5"/>
+        <circle cx="143" cy="234" r="5"/>
+        <circle cx="143" cy="256" r="5"/>
+        <circle cx="143" cy="278" r="5"/>
+        <circle cx="143" cy="300" r="5"/>
+        <line x1="42" y1="194" x2="42" y2="212"/>
+        <ellipse cx="42" cy="217" rx="5" ry="8"/>
+        <line x1="80" y1="194" x2="80" y2="212"/>
+        <ellipse cx="80" cy="217" rx="5" ry="8"/>
+        <line x1="118" y1="194" x2="118" y2="212"/>
+        <ellipse cx="118" cy="217" rx="5" ry="8"/>
+        <rect x="0" y="454" width="160" height="44"/>
+        <line x1="0" y1="500" x2="160" y2="500" stroke-width="1.5"/>
+      </g>
+    </svg>
     <p class="footer-super fu">Kanaa Kanden &middot; An Andal Kalyanam &middot; 2026</p>
 
     <!-- R&S Circular Lotus Mandala Monogram -->
