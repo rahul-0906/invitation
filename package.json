@@ -1,0 +1,17 @@
+{
+  "name": "kanaa-kanden-invitation",
+  "version": "1.0.0",
+  "description": "Kanaa Kanden: An Andal Kalyanam — Rahul & Suruthi Wedding Invitation Website",
+  "private": true,
+  "scripts": {
+    "dev": "vite --port 5179",
+    "start": "vite --port 5179",
+    "preview": "vite preview --port 5179",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  },
+  "keywords": ["wedding", "invitation", "andal", "kalyanam"],
+  "author": "Rahul Babu M V & Suruthi R"
+}
