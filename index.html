@@ -536,10 +536,10 @@
     /* ===========================
        EVENTS
     =========================== */
-    #events { background: var(--maroon); padding: 6rem 1.5rem; }
-    #events .sec-tag   { color: rgba(226,192,124,0.58); }
-    #events .sec-title { color: var(--gold-lt); }
-    #events .sec-sub   { color: rgba(245,239,230,0.55); }
+    #events { background: var(--cream); padding: 6rem 1.5rem; }
+    #events .sec-tag   { color: var(--gold); }
+    #events .sec-title { color: var(--maroon); }
+    #events .sec-sub   { color: var(--gold); }
 
     .events-grid {
       display: grid;
@@ -551,8 +551,8 @@
 
     .event-card {
       position: relative;
-      background: rgba(245,239,230, 0.06);
-      border: 1px solid rgba(201,151,62,0.24);
+      background: var(--white);
+      border: 1px solid rgba(201,151,62,0.28);
       border-radius: var(--r-lg);
       padding: 2.2rem 1.5rem 1.8rem;
       text-align: center;
@@ -573,8 +573,8 @@
 
     .event-card:hover {
       transform: translateY(-6px);
-      background: rgba(245,239,230,0.10);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+      background: rgba(201,151,62,0.03);
+      box-shadow: 0 12px 30px rgba(123,26,36,0.1);
     }
 
     .event-icon { font-size: 2rem; display: block; margin-bottom: 1rem; }
@@ -592,7 +592,7 @@
     .event-date {
       font-family: var(--f-script);
       font-size: 1.9rem;
-      color: var(--cream);
+      color: var(--maroon);
       line-height: 1.2;
       margin-bottom: 0.2rem;
     }
@@ -600,7 +600,7 @@
     .event-time {
       font-family: var(--f-head);
       font-size: 0.82rem;
-      color: var(--gold-lt);
+      color: var(--charcoal-l);
       letter-spacing: 0.08em;
     }
 
@@ -609,7 +609,7 @@
       font-family: var(--f-head);
       font-size: 0.56rem;
       letter-spacing: 0.18em;
-      color: rgba(201,151,62,0.42);
+      color: var(--gold);
       text-transform: uppercase;
     }
 
@@ -1011,7 +1011,7 @@
       <span class="sec-tag fu">The Sacred Occasions</span>
       <h2 class="sec-title fu d1">Theiveega Sadangugal</h2>
       <p class="sec-sub fu d1">The Divine Rituals</p>
-      <div class="divider light fu d2"><span class="orn">&#10022;</span></div>
+      <div class="divider fu d2"><span class="orn">&#10022;</span></div>
       <div class="events-grid">
         <article class="event-card fu d2" aria-label="Engagement event">
           <span class="event-icon" aria-hidden="true">&#128141;</span>
