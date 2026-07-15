@@ -1280,7 +1280,6 @@
                aria-label="Music volume" oninput="setVol(this.value)" />
       </div>
     </div>
-    <p class="audio-note fu d3" id="audioNote">&#9834; Playing softly in celebration of this divine union</p>
   </section>
 
   <!-- ====================================================
@@ -1489,7 +1488,6 @@
     var btn     = document.getElementById('audioBtn');
     var playIco = document.getElementById('playIco');
     var pauseIco = document.getElementById('pauseIco');
-    var noteEl  = document.getElementById('audioNote');
     audio.volume = 0.38;
 
     function toggleAudio() {
@@ -1500,8 +1498,8 @@
             pauseIco.style.display = 'block';
             btn.setAttribute('aria-label', 'Pause background music');
           })
-          .catch(function () {
-            noteEl.textContent = 'Place "nadaswaram.mp3" in the project folder to enable music.';
+          .catch(function (err) {
+            console.warn('Playback blocked or missing audio file:', err);
           });
       } else {
         audio.pause();
@@ -1513,8 +1511,8 @@
 
     function setVol(v) { audio.volume = parseFloat(v); }
 
-    audio.addEventListener('error', function () {
-      noteEl.textContent = 'Place "nadaswaram.mp3" in the same folder as this file to enable Nadaswaram music.';
+    audio.addEventListener('error', function (err) {
+      console.warn('Audio resource error:', err);
     });
   </script>
 </body>
