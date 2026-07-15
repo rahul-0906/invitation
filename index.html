@@ -22,12 +22,12 @@
       --maroon:    #7B1A24;
       --maroon-d:  #5A1019;
       --maroon-l:  #9B2232;
-      --gold:      #B3822B; /* Darkened from #C9973E for better visual contrast on light backgrounds */
-      --gold-lt:   #F5D187; /* Brightened from #E2C07C for higher visibility on dark maroon backgrounds */
-      --gold-pale: #FFE9B3; /* Brightened from #F0D898 for better legibility */
+      --gold:      #C9973E;
+      --gold-lt:   #E2C07C;
+      --gold-pale: #F0D898;
       --green:     #2B4A39;
-      --charcoal:  #202020; /* Darkened for higher text readability */
-      --charcoal-l:#333333; /* Darkened for higher text readability */
+      --charcoal:  #2C2C2C;
+      --charcoal-l:#4A4A4A;
       --white:     #FFFFFF;
 
       --f-head:    'Cinzel', serif;
@@ -107,13 +107,13 @@
     .sec-tag {
       display: block;
       font-family: var(--f-head);
-      font-size: 0.72rem; /* Increased from 0.65rem */
+      font-size: 0.65rem;
       letter-spacing: 0.45em;
       color: var(--gold);
       text-transform: uppercase;
       text-align: center;
       margin-bottom: 0.85rem;
-      font-weight: 800; /* Made bolder */
+      font-weight: 700;
     }
     .sec-title {
       font-family: var(--f-head);
@@ -126,12 +126,12 @@
     }
     .sec-sub {
       font-family: var(--f-elegant);
-      font-size: 1.15rem; /* Increased from 1.05rem */
+      font-size: 1.05rem;
       font-style: italic;
       color: var(--gold);
       text-align: center;
       letter-spacing: 0.04em;
-      font-weight: 800; /* Made bolder */
+      font-weight: 700;
     }
 
     /* ===========================
@@ -346,49 +346,46 @@
       overflow: hidden;
     }
 
-    #verse .sec-tag   { color: rgba(245,209,135,0.85); font-weight: 700; }
+    #verse .sec-tag   { color: rgba(226,192,124,0.65); }
     #verse .sec-title { color: var(--gold-lt); }
-    #verse .sec-sub   { color: rgba(245,239,230,0.85); font-weight: 700; }
+    #verse .sec-sub   { color: rgba(245,239,230,0.55); }
 
     .verse-card {
       max-width: 700px;
       margin: 2.5rem auto 0;
       padding: 2.8rem 2.5rem;
-      border: 1px solid rgba(245,209,135,0.35);
+      border: 1px solid rgba(201,151,62,0.22);
       border-radius: var(--r-lg);
-      background: rgba(0, 0, 0, 0.35);
+      background: rgba(0, 0, 0, 0.22);
       backdrop-filter: blur(2px);
     }
 
     .verse-ta {
       font-family: var(--f-tamil);
-      font-size: clamp(1.1rem, 2.8vw, 1.45rem);
-      color: var(--white);
+      font-size: clamp(1rem, 2.5vw, 1.28rem);
+      color: var(--cream);
       line-height: 2.4;
       text-align: center;
       margin-bottom: 1.8rem;
-      font-weight: 700;
     }
 
     .verse-roman {
       font-family: var(--f-body);
-      font-size: 1.05rem;
+      font-size: 0.92rem;
       font-style: italic;
-      color: var(--gold-pale);
+      color: rgba(226,192,124,0.75);
       text-align: center;
       line-height: 2.1;
       margin-bottom: 1.6rem;
-      font-weight: 600;
     }
 
     .verse-en {
       font-family: var(--f-elegant);
-      font-size: 1.25rem;
+      font-size: 1.05rem;
       font-style: italic;
-      color: var(--cream);
+      color: rgba(245,239,230,0.65);
       text-align: center;
       line-height: 2;
-      font-weight: 500;
     }
 
     .verse-credit {
@@ -651,11 +648,10 @@
 
     .venue-addr {
       font-family: var(--f-body);
-      font-size: 1.05rem;
-      color: rgba(245,239,230,0.85);
+      font-size: 0.95rem;
+      color: rgba(245,239,230,0.65);
       line-height: 1.9;
       margin-bottom: 2rem;
-      font-weight: 500;
     }
 
     .map-btn {
@@ -664,14 +660,13 @@
       gap: 0.55rem;
       padding: 0.85rem 2.2rem;
       background: var(--gold);
-      color: var(--white); /* White text for higher contrast over gold background buttons */
+      color: var(--maroon);
       font-family: var(--f-head);
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       text-decoration: none;
       border-radius: var(--r-pill);
-      font-weight: 700; /* Bold font for gold */
       transition:
         background var(--dur) var(--ease),
         transform var(--dur) var(--ease),
