@@ -112,11 +112,12 @@
       text-transform: uppercase;
       text-align: center;
       margin-bottom: 0.85rem;
+      font-weight: 700;
     }
     .sec-title {
       font-family: var(--f-head);
       font-size: clamp(1.7rem, 4vw, 2.6rem);
-      font-weight: 600;
+      font-weight: 700;
       color: var(--maroon);
       text-align: center;
       line-height: 1.25;
@@ -129,6 +130,7 @@
       color: var(--gold);
       text-align: center;
       letter-spacing: 0.04em;
+      font-weight: 700;
     }
 
     /* ===========================
@@ -1032,7 +1034,16 @@
           <div class="event-meta">Saturday &middot; 2026</div>
         </article>
         <article class="event-card fu d4" aria-label="Muhurtham event">
-          <span class="event-icon" aria-hidden="true">&#129582;</span>
+          <!-- Sacred fire/Kalasam outline icon -->
+          <span class="event-icon" aria-hidden="true" style="display:flex; justify-content:center; align-items:center; height:32px;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7B1A24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2C12 2 15 6 15 8.5C15 10.5 13.5 12 12 12C10.5 12 9 10.5 9 8.5C9 6 12 2 12 2Z" fill="rgba(123,26,36,0.15)"/>
+              <path d="M6 16H18V21C18 21.5 17.5 22 17 22H7C6.5 22 6 21.5 6 21V16Z"/>
+              <path d="M4 16H20"/>
+              <path d="M8 12H16"/>
+              <path d="M12 12V16"/>
+            </svg>
+          </span>
           <span class="event-name">Muhurtham</span>
           <div class="event-date">September 13</div>
           <div class="event-time">8:30 AM</div>
@@ -1052,7 +1063,7 @@
       <p class="sec-sub fu d1 tc">The Divine Sanctum</p>
       <div class="venue-card fu d2">
         <svg class="venue-icon" viewBox="0 0 52 52" fill="none" aria-hidden="true">
-          <g stroke="#C9973E" stroke-width="1" fill="none">
+          <g stroke="#C9973E" stroke-width="1.4" fill="none">
             <circle cx="26" cy="26" r="24"/>
             <circle cx="26" cy="26" r="18" stroke-dasharray="3,4"/>
             <circle cx="26" cy="26" r="10"/>
@@ -1151,7 +1162,7 @@
   <section id="hashtag" class="sec">
     <div class="sec-inner tc">
       <span class="hashtag-tag fu">Share the Celebration</span>
-      <p class="hashtag-text fu d1" aria-label="Wedding hashtag: rahulwedssuruthi">#rahulwedssuruthi</p>
+      <p class="hashtag-text fu d1" aria-label="Wedding hashtag: RahulWedsSuruthi">#RahulWedsSuruthi</p>
       <p class="hashtag-desc fu d2">Tag your wishes, memories, and blessings &mdash; let the whole world witness this divine union</p>
     </div>
   </section>
