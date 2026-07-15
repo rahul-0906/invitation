@@ -1514,6 +1514,35 @@
     audio.addEventListener('error', function (err) {
       console.warn('Audio resource error:', err);
     });
+
+    /* Autoplay logic (handling modern browser autoplay policies) */
+    var autoPlayAttempted = false;
+    function attemptAutoplay() {
+      if (autoPlayAttempted) return;
+      audio.play()
+        .then(function() {
+          autoPlayAttempted = true;
+          playIco.style.display  = 'none';
+          pauseIco.style.display = 'block';
+          btn.setAttribute('aria-label', 'Pause background music');
+          // Clean up first-interaction listeners
+          document.removeEventListener('click', attemptAutoplay);
+          document.removeEventListener('touchstart', attemptAutoplay);
+        })
+        .catch(function(err) {
+          console.log('Autoplay blocked by browser policy, waiting for user click.', err);
+        });
+    }
+
+    // Try immediately on window load
+    window.addEventListener('DOMContentLoaded', function() {
+      // Small timeout to let browser initialize audio device
+      setTimeout(attemptAutoplay, 800);
+    });
+
+    // Fallback: Play on user's first click/touch interaction anywhere
+    document.addEventListener('click', attemptAutoplay);
+    document.addEventListener('touchstart', attemptAutoplay);
   </script>
 </body>
 </html>
