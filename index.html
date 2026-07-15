@@ -781,35 +781,46 @@
     #footer {
       position: relative;
       background: var(--maroon);
-      padding: 5.5rem 1.5rem 3rem;
+      padding: 3rem 1.5rem 2.5rem;
       text-align: center;
       overflow: hidden;
     }
 
-    .footer-super {
+    .footer-logo { 
+      margin: 0 auto 1.5rem; 
+      display: block;
+    }
+
+    .footer-logo svg {
+      width: 140px;
+      height: 140px;
+    }
+
+    .footer-info-text {
       font-family: var(--f-head);
-      font-size: 0.62rem;
-      letter-spacing: 0.44em;
-      color: rgba(201,151,62,0.40);
+      font-size: 0.65rem;
+      letter-spacing: 0.28em;
+      color: rgba(226,192,124,0.7);
       text-transform: uppercase;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
     }
 
-    .footer-join {
+    .footer-hashtag-text {
       font-family: var(--f-script);
-      font-size: clamp(2.6rem, 6.5vw, 4.2rem);
+      font-size: 1.8rem;
       color: var(--cream);
-      margin-bottom: 3rem;
+      margin-bottom: 0.8rem;
+      display: block;
+      letter-spacing: 0.02em;
     }
-
-    .footer-logo { margin: 0 auto 2.5rem; }
 
     .footer-copy {
-      font-family: var(--f-head);
-      font-size: 0.58rem;
-      letter-spacing: 0.22em;
-      color: rgba(201,151,62,0.30);
-      text-transform: uppercase;
+      font-family: var(--f-body);
+      font-size: 0.78rem;
+      color: rgba(245,239,230,0.5);
+      margin-top: 0.4rem;
+      display: block;
     }
 
     /* ===========================
@@ -1343,10 +1354,8 @@
         <line x1="0" y1="500" x2="160" y2="500" stroke-width="1.5"/>
       </g>
     </svg>
-    <p class="footer-super fu">Kanaa Kanden &middot; An Andal Kalyanam &middot; 2026</p>
-
     <!-- R&S Circular Lotus Mandala Monogram -->
-    <div class="footer-logo fu d2">
+    <div class="footer-logo fu">
       <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
            role="img" aria-label="R and S wedding monogram encircled by a lotus mandala in gold on cream">
         <defs>
@@ -1398,7 +1407,9 @@
       </svg>
     </div>
 
-    <p class="footer-copy fu d3">Rahul Babu M V &amp; Suruthi R &nbsp;&middot;&nbsp; September 2026 &nbsp;&middot;&nbsp; Tenkasi, Tamil Nadu</p>
+    <p class="footer-info-text fu">Kanaa Kanden &middot; An Andal Kalyanam &middot; 2026</p>
+    <p class="footer-hashtag-text fu">#RahulWedsSuruthi</p>
+    <p class="footer-copy fu">With love, Rahul &amp; Suruthi. Copyright 2026.</p>
   </footer>
 
   <script>
