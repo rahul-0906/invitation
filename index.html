@@ -8,6 +8,7 @@
   <meta property="og:title" content="Kanaa Kanden: An Andal Kalyanam" />
   <meta property="og:description" content="Rahul Babu M V weds Suruthi R — September 13, 2026 · Tenkasi" />
   <meta name="theme-color" content="#6B151E" />
+  <meta property="og:image" content="logo.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Tiro+Tamil&display=swap" rel="stylesheet" />
@@ -827,6 +828,29 @@
       display: block;
     }
 
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.25rem 1.2rem;
+      margin: 0.9rem 0 0.4rem;
+      padding: 0.6rem 0;
+      border-top: 1px solid rgba(201,151,62,0.2);
+      border-bottom: 1px solid rgba(201,151,62,0.2);
+    }
+
+    .footer-nav a {
+      font-family: var(--f-head);
+      font-size: 0.52rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(226,192,124,0.65);
+      transition: color 0.3s ease;
+      padding: 0.2rem 0;
+    }
+
+    .footer-nav a:hover { color: var(--gold-pale); }
+
     #footer .gopuram {
       height: 100%;
       top: 50%;
@@ -1426,6 +1450,18 @@
 
     <p class="footer-info-text">Kanaa Kanden &middot; An Andal Kalyanam &middot; 2026</p>
     <p class="footer-hashtag-text">#RahulWedsSuruthi</p>
+
+    <!-- Footer Navigation Menu -->
+    <nav class="footer-nav" aria-label="Page sections">
+      <a href="#hero">Home</a>
+      <a href="#welcome">Welcome</a>
+      <a href="#verse">Andal Verse</a>
+      <a href="#events">Events</a>
+      <a href="#venue">Venue</a>
+      <a href="#countdown">Countdown</a>
+      <a href="#hashtag">Share</a>
+    </nav>
+
     <p class="footer-copy">With love, Rahul &amp; Suruthi. &copy; 2026.</p>
   </footer>
 

@@ -9,6 +9,62 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Tiro+Tamil&display=swap" rel="stylesheet" />
   <style>
     /* ========================
+       DOWNLOAD TOOLBAR
+    ======================== */
+    .download-bar {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.8rem;
+      z-index: 999;
+      background: rgba(30,10,10,0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(201,151,62,0.4);
+      border-radius: 100px;
+      padding: 0.6rem 1.2rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+
+    .dl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 1.2rem;
+      border-radius: 100px;
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: background 0.25s ease, transform 0.2s ease;
+    }
+
+    .dl-btn.png {
+      background: #C9973E;
+      color: #fff;
+    }
+
+    .dl-btn.pdf {
+      background: transparent;
+      color: #E2C07C;
+      border: 1px solid rgba(201,151,62,0.5);
+    }
+
+    .dl-btn:hover { transform: translateY(-2px); }
+    .dl-btn.png:hover { background: #E2C07C; }
+    .dl-btn.pdf:hover { background: rgba(201,151,62,0.12); }
+
+    .dl-btn svg { flex-shrink: 0; }
+
+    @media print {
+      .download-bar { display: none !important; }
+    }
+    /* ========================
        RESET & BASE
     ======================== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -316,6 +372,29 @@
       line-height: 1.7;
     }
 
+    .map-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding: 0.65rem 1.6rem;
+      background: #C9973E;
+      color: #fff;
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 100px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .map-btn:hover {
+      background: #E2C07C;
+      transform: translateY(-2px);
+    }
+
     /* ========================
        HASHTAG
     ======================== */
@@ -548,6 +627,10 @@
       <div class="gold-divider" style="width:60%;margin-bottom:0.6rem"><span class="orn">✦</span></div>
       <h2 class="venue-name-big">Thaibala Wedding Hall</h2>
       <p class="venue-address">Melagaram, Tenkasi, Tamil Nadu</p>
+      <a class="map-btn" href="https://maps.google.com/?q=Thaibala+Wedding+Hall,+Melagaram,+Tenkasi,+Tamil+Nadu" target="_blank" rel="noopener noreferrer">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Open in Google Maps
+      </a>
     </div>
 
     <!-- HASHTAG -->
@@ -561,6 +644,93 @@
   </div>
 
 </div><!-- /poster -->
+
+<!-- Download Toolbar -->
+<div class="download-bar" id="downloadBar">
+  <button class="dl-btn png" id="btnPng" onclick="downloadPNG()">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+    Download PNG
+  </button>
+  <button class="dl-btn pdf" id="btnPdf" onclick="downloadPDF()">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8L14 2zM14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+    Download PDF
+  </button>
+</div>
+
+<!-- Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+  var poster = document.querySelector('.poster');
+
+  function setLoading(btn, text) {
+    btn.disabled = true;
+    btn.style.opacity = '0.6';
+    btn.textContent = text;
+  }
+  function resetBtn(btn, label) {
+    btn.disabled = false;
+    btn.style.opacity = '1';
+    btn.innerHTML = label;
+  }
+
+  function downloadPNG() {
+    var btn = document.getElementById('btnPng');
+    setLoading(btn, 'Generating…');
+    document.getElementById('downloadBar').style.display = 'none';
+
+    html2canvas(poster, {
+      scale: 3,
+      useCORS: true,
+      allowTaint: false,
+      backgroundColor: null,
+      logging: false
+    }).then(function(canvas) {
+      document.getElementById('downloadBar').style.display = 'flex';
+      var link = document.createElement('a');
+      link.download = 'RahulWedsSuruthi-Poster.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+      resetBtn(btn, '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg> Download PNG');
+    }).catch(function(err) {
+      document.getElementById('downloadBar').style.display = 'flex';
+      console.error('PNG export failed:', err);
+      resetBtn(btn, 'Error – Retry');
+    });
+  }
+
+  function downloadPDF() {
+    var btn = document.getElementById('btnPdf');
+    setLoading(btn, 'Generating…');
+    document.getElementById('downloadBar').style.display = 'none';
+
+    html2canvas(poster, {
+      scale: 3,
+      useCORS: true,
+      allowTaint: false,
+      backgroundColor: null,
+      logging: false
+    }).then(function(canvas) {
+      document.getElementById('downloadBar').style.display = 'flex';
+      var imgData = canvas.toDataURL('image/jpeg', 1.0);
+      var w = poster.offsetWidth;
+      var h = poster.offsetHeight;
+      var { jsPDF } = window.jspdf;
+      var pdf = new jsPDF({
+        orientation: h > w ? 'portrait' : 'landscape',
+        unit: 'px',
+        format: [w, h]
+      });
+      pdf.addImage(imgData, 'JPEG', 0, 0, w, h);
+      pdf.save('RahulWedsSuruthi-Poster.pdf');
+      resetBtn(btn, '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8L14 2zM14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg> Download PDF');
+    }).catch(function(err) {
+      document.getElementById('downloadBar').style.display = 'flex';
+      console.error('PDF export failed:', err);
+      resetBtn(btn, 'Error – Retry');
+    });
+  }
+</script>
 
 </body>
 </html>
