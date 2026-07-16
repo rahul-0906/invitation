@@ -637,6 +637,13 @@
     <!-- HASHTAG -->
     <p class="poster-hashtag">#RahulWedsSuruthi</p>
 
+    <!-- WEBSITE QR SECTION -->
+    <div class="qr-section-poster" style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 0.5rem; margin-bottom: 1.5rem;">
+      <span style="font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: 0.2em; color: #E2C07C; text-transform: uppercase; margin-bottom: 0.4rem;">Visit our wedding website</span>
+      <div id="websiteQR" style="padding: 6px; background: white; border-radius: 4px; display: inline-block;"></div>
+      <span style="font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.15em; color: #F5EFE6; margin-top: 0.4rem;">rahulwedssuruthi.in</span>
+    </div>
+
   </div><!-- /poster-content -->
 
   <!-- BOTTOM BAND -->
@@ -661,8 +668,22 @@
 <!-- Libraries -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
+  var SITE_URL = 'https://rahulwedssuruthi.in';
   var poster = document.querySelector('.poster');
+
+  // Generate website QR on load
+  window.addEventListener('load', function() {
+    new QRCode(document.getElementById('websiteQR'), {
+      text: SITE_URL,
+      width: 90,
+      height: 90,
+      colorDark: '#5A1019',
+      colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.M
+    });
+  });
 
   function setLoading(btn, text) {
     btn.disabled = true;
@@ -723,6 +744,23 @@
         format: [w, h]
       });
       pdf.addImage(imgData, 'JPEG', 0, 0, w, h);
+
+      // Make QR code clickable inside exported PDF
+      var qrEl = document.getElementById('websiteQR');
+      if (qrEl) {
+        var pr = poster.getBoundingClientRect();
+        var qr = qrEl.getBoundingClientRect();
+        var scaleX = w / pr.width;
+        var scaleY = h / pr.height;
+        pdf.link(
+          (qr.left - pr.left) * scaleX,
+          (qr.top - pr.top) * scaleY,
+          qr.width * scaleX,
+          qr.height * scaleY,
+          { url: SITE_URL }
+        );
+      }
+
       pdf.save('RahulWedsSuruthi-Poster.pdf');
       resetBtn(btn, '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8L14 2zM14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg> Download PDF');
     }).catch(function(err) {
