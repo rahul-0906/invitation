@@ -1581,28 +1581,39 @@
       console.warn('Audio resource error:', err);
     });
 
-    /* ── Play on Scroll ────────────── */
+    /* ── Play on Scroll & User Interactions ────────────── */
     var audioStarted = false;
 
     function playAudioOnScroll() {
       if (audioStarted) return; 
 
-      audio.muted = false; 
+      audio.muted = false;
+      audio.volume = 0.38;
       
-      audio.play().then(function() {
-        audioStarted = true;
-        
-        playIco.style.display  = 'none';
-        pauseIco.style.display = 'block';
-        btn.setAttribute('aria-label', 'Pause background music');
-        
-        window.removeEventListener('scroll', playAudioOnScroll);
-      }).catch(function(err) {
-        console.warn('Browser requires a direct click to play audio.', err);
-      });
+      var playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.then(function() {
+          audioStarted = true;
+          playIco.style.display  = 'none';
+          pauseIco.style.display = 'block';
+          btn.setAttribute('aria-label', 'Pause background music');
+          
+          // Remove listener after successful play
+          ['scroll', 'click', 'touchstart'].forEach(function(ev) {
+            window.removeEventListener(ev, playAudioOnScroll);
+            document.removeEventListener(ev, playAudioOnScroll);
+          });
+        }).catch(function(err) {
+          console.warn('Play attempt deferred:', err);
+        });
+      }
     }
 
-    window.addEventListener('scroll', playAudioOnScroll, { passive: true });
+    // Attach to scroll and touch events on both window and document
+    ['scroll', 'click', 'touchstart'].forEach(function(ev) {
+      window.addEventListener(ev, playAudioOnScroll, { passive: true });
+      document.addEventListener(ev, playAudioOnScroll, { passive: true });
+    });
   </script>
 
 </body>
