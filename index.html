@@ -178,11 +178,19 @@
       right: 0;
       top: 50%;
       transform: translateY(-50%);
-      height: 80vh;
+      height: 100vh;
       width: auto;
       pointer-events: none;
-      opacity: 0.18; /* Darkened from 0.12 for more visibility */
-      filter: drop-shadow(0 0 12px rgba(201,151,62,0.25));
+      opacity: 0.22;
+      filter: drop-shadow(0 0 18px rgba(201,151,62,0.3));
+      animation: gopuram-breathe 8s ease-in-out infinite;
+      transform-origin: center bottom;
+    }
+
+    @keyframes gopuram-breathe {
+      0%   { transform: translateY(-50%) scale(1);    opacity: 0.18; }
+      50%  { transform: translateY(-52%) scale(1.04); opacity: 0.26; }
+      100% { transform: translateY(-50%) scale(1);    opacity: 0.18; }
     }
 
     /* Garland top swag */
@@ -835,8 +843,6 @@
       gap: 0.25rem 1.2rem;
       margin: 0.9rem 0 0.4rem;
       padding: 0.6rem 0;
-      border-top: 1px solid rgba(201,151,62,0.2);
-      border-bottom: 1px solid rgba(201,151,62,0.2);
     }
 
     .footer-nav a {
@@ -889,7 +895,7 @@
         gap: 1.2rem;
       }
 
-      .gopuram      { height: 45vh; opacity: 0.05; }
+      .gopuram      { height: 60vh; opacity: 0.08; }
       #footer .gopuram { height: 100%; top: 50%; transform: translateY(-50%); }
       .verse-card   { padding: 1.8rem 1rem; }
 
@@ -1569,38 +1575,43 @@
       console.warn('Audio resource error:', err);
     });
 
-    /* Autoplay logic (handling modern browser autoplay policies) */
-    var autoPlayAttempted = false;
-    function attemptAutoplay() {
-      if (autoPlayAttempted) return;
-      audio.play()
-        .then(function() {
-          autoPlayAttempted = true;
-          playIco.style.display  = 'none';
-          pauseIco.style.display = 'block';
-          btn.setAttribute('aria-label', 'Pause background music');
-          // Clean up first-interaction listeners
-          document.removeEventListener('click', attemptAutoplay);
-          document.removeEventListener('touchstart', attemptAutoplay);
-          document.removeEventListener('scroll', attemptAutoplay);
-          document.removeEventListener('keydown', attemptAutoplay);
-        })
-        .catch(function(err) {
-          console.log('Autoplay blocked by browser policy, waiting for user interaction.', err);
-        });
+    /* ── Autoplay: muted trick bypasses browser block ────────────── */
+    /* Step 1 – Start muted immediately (all browsers allow muted autoplay) */
+    var audioUnlocked = false;
+    audio.muted = true;
+    audio.play()
+      .then(function() {
+        playIco.style.display  = 'none';
+        pauseIco.style.display = 'block';
+        btn.setAttribute('aria-label', 'Pause background music');
+      })
+      .catch(function(err) {
+        console.log('Even muted autoplay blocked — will start on first gesture.', err);
+      });
+
+    /* Step 2 – On first user gesture, unmute and keep playing */
+    function unlockAudio() {
+      if (audioUnlocked) return;
+      audioUnlocked = true;
+      audio.muted = false;
+      if (audio.paused) {
+        audio.play()
+          .then(function() {
+            playIco.style.display  = 'none';
+            pauseIco.style.display = 'block';
+            btn.setAttribute('aria-label', 'Pause background music');
+          })
+          .catch(function(err) { console.warn('Playback blocked:', err); });
+      }
+      ['click','touchstart','scroll','keydown'].forEach(function(e) {
+        document.removeEventListener(e, unlockAudio);
+      });
     }
 
-    // Try immediately on window load
-    window.addEventListener('DOMContentLoaded', function() {
-      // Small timeout to let browser initialize audio device
-      setTimeout(attemptAutoplay, 800);
+    ['click','touchstart','scroll','keydown'].forEach(function(e) {
+      document.addEventListener(e, unlockAudio, { passive: true });
     });
-
-    // Fallback: Play on user's first touch, click, scroll, or keypress anywhere
-    document.addEventListener('click', attemptAutoplay);
-    document.addEventListener('touchstart', attemptAutoplay);
-    document.addEventListener('scroll', attemptAutoplay);
-    document.addEventListener('keydown', attemptAutoplay);
   </script>
+
 </body>
 </html>
