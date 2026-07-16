@@ -12,7 +12,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Tiro+Tamil&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/jpeg" href="logo.jpg" />
+  <!-- Standard Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <!-- For Modern Browsers -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+  <!-- For Apple Devices -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <style>
     /* ===========================
        DESIGN TOKENS
@@ -1576,42 +1581,28 @@
       console.warn('Audio resource error:', err);
     });
 
-    /* ── Autoplay: muted trick bypasses browser block ────────────── */
-    /* Step 1 – Start muted immediately (all browsers allow muted autoplay) */
-    var audioUnlocked = false;
-    audio.muted = true;
-    audio.play()
-      .then(function() {
+    /* ── Play on Scroll ────────────── */
+    var audioStarted = false;
+
+    function playAudioOnScroll() {
+      if (audioStarted) return; 
+
+      audio.muted = false; 
+      
+      audio.play().then(function() {
+        audioStarted = true;
+        
         playIco.style.display  = 'none';
         pauseIco.style.display = 'block';
         btn.setAttribute('aria-label', 'Pause background music');
-      })
-      .catch(function(err) {
-        console.log('Even muted autoplay blocked — will start on first gesture.', err);
-      });
-
-    /* Step 2 – On first user gesture, unmute and keep playing */
-    function unlockAudio() {
-      if (audioUnlocked) return;
-      audioUnlocked = true;
-      audio.muted = false;
-      if (audio.paused) {
-        audio.play()
-          .then(function() {
-            playIco.style.display  = 'none';
-            pauseIco.style.display = 'block';
-            btn.setAttribute('aria-label', 'Pause background music');
-          })
-          .catch(function(err) { console.warn('Playback blocked:', err); });
-      }
-      ['click','touchstart','scroll','keydown'].forEach(function(e) {
-        document.removeEventListener(e, unlockAudio);
+        
+        window.removeEventListener('scroll', playAudioOnScroll);
+      }).catch(function(err) {
+        console.warn('Browser requires a direct click to play audio.', err);
       });
     }
 
-    ['click','touchstart','scroll','keydown'].forEach(function(e) {
-      document.addEventListener(e, unlockAudio, { passive: true });
-    });
+    window.addEventListener('scroll', playAudioOnScroll, { passive: true });
   </script>
 
 </body>
