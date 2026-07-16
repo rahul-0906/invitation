@@ -1,16 +1,22 @@
 import { defineConfig } from 'vite'
-
-// Kanaa Kanden Wedding Invitation — Vite Dev Server Config
-// Default port: 5179 for both development and preview
+import { resolve } from 'path'
 
 export default defineConfig({
   server: {
     port: 5179,
     open: true,
-    strictPort: true, // Fail instead of auto-incrementing port
+    strictPort: true,
   },
   preview: {
     port: 5179,
     strictPort: true,
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        poster: resolve(__dirname, 'poster.html'),
+      },
+    },
   },
 })
