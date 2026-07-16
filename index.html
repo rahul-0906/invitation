@@ -209,16 +209,13 @@
       pointer-events: none;
       user-select: none;
       opacity: 0.18;
-      animation: elephantFloat 10s ease-in-out infinite alternate;
+      animation: elephant-breathe 8s ease-in-out infinite;
     }
 
-    @keyframes elephantFloat {
-      from {
-        transform: translateY(-50%) translateX(0px);
-      }
-      to {
-        transform: translateY(-50%) translateX(8px);
-      }
+    @keyframes elephant-breathe {
+      0%   { transform: translateY(-50%) translateX(0px) scale(1); }
+      50%  { transform: translateY(-50%) translateX(12px) scale(1.03); }
+      100% { transform: translateY(-50%) translateX(0px) scale(1); }
     }
 
     /* Containment rules for sections with absolute children */
