@@ -1590,23 +1590,21 @@
       audio.muted = false;
       audio.volume = 0.38;
       
-      var playPromise = audio.play();
-      if (playPromise !== undefined) {
-        playPromise.then(function() {
-          audioStarted = true;
-          playIco.style.display  = 'none';
-          pauseIco.style.display = 'block';
-          btn.setAttribute('aria-label', 'Pause background music');
-          
-          // Remove listener after successful play
-          ['scroll', 'click', 'touchstart'].forEach(function(ev) {
-            window.removeEventListener(ev, playAudioOnScroll);
-            document.removeEventListener(ev, playAudioOnScroll);
-          });
-        }).catch(function(err) {
-          console.warn('Play attempt deferred:', err);
+      // Force unmuting and playing directly on first scroll gesture
+      audio.play().then(function() {
+        audioStarted = true;
+        playIco.style.display  = 'none';
+        pauseIco.style.display = 'block';
+        btn.setAttribute('aria-label', 'Pause background music');
+        
+        // Remove scroll listener after successful play
+        ['scroll', 'click', 'touchstart'].forEach(function(ev) {
+          window.removeEventListener(ev, playAudioOnScroll);
+          document.removeEventListener(ev, playAudioOnScroll);
         });
-      }
+      }).catch(function(err) {
+        console.warn('Playback deferral check:', err);
+      });
     }
 
     // Attach to scroll and touch events on both window and document
