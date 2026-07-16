@@ -200,10 +200,10 @@
     /* Decorative South Indian temple elephant on cream sections */
     .royal-elephant-bg {
       position: absolute;
-      left: -70px;
+      left: -95px; /* Offset to keep ~28% extending outside viewport */
       top: 50%;
       transform: translateY(-50%);
-      width: 260px;
+      width: 340px; /* Increased from 260px */
       height: auto;
       z-index: 0;
       pointer-events: none;
@@ -960,7 +960,8 @@
       .cdown-sep { display: none; }
 
       .royal-elephant-bg {
-        width: 200px;
+        width: 270px; /* Increased from 200px */
+        left: -80px; /* Offset to keep ~30% extending outside viewport */
       }
     }
 
@@ -993,8 +994,8 @@
       .map-btn { width: 100%; box-sizing: border-box; justify-content: center; padding: 0.95rem 1.5rem; } /* larger tap area */
 
       .royal-elephant-bg {
-        width: 130px;
-        left: -55px;
+        width: 180px; /* Increased from 130px */
+        left: -55px; /* Offset to keep ~30% extending outside viewport */
         opacity: 0.14;
       }
     }
