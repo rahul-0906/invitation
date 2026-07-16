@@ -1614,6 +1614,14 @@
       window.addEventListener(ev, playAudioOnScroll, { passive: true });
       document.addEventListener(ev, playAudioOnScroll, { passive: true });
     });
+
+    // Make sure toggleAudio triggers even if scroll script hasn't unmuted yet
+    var origToggleAudio = toggleAudio;
+    toggleAudio = function() {
+      audio.muted = false;
+      audioStarted = true;
+      origToggleAudio();
+    };
   </script>
 
 </body>
