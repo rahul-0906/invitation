@@ -200,15 +200,15 @@
     /* Decorative South Indian temple elephant on cream sections */
     .royal-elephant-bg {
       position: absolute;
-      left: -95px; /* Offset to keep ~28% extending outside viewport */
+      left: -130px; /* Offset to bleed nicely when height is 85% of section */
       top: 50%;
       transform: translateY(-50%);
-      width: 340px; /* Increased from 260px */
-      height: auto;
+      height: 85%; /* Scales to leave only some space at top and bottom */
+      width: auto; /* Dynamic proportional scaling */
       z-index: 0;
       pointer-events: none;
       user-select: none;
-      opacity: 0.20;
+      opacity: 0.18;
       animation: elephantFloat 10s ease-in-out infinite alternate;
     }
 
@@ -960,8 +960,9 @@
       .cdown-sep { display: none; }
 
       .royal-elephant-bg {
-        width: 270px; /* Increased from 200px */
-        left: -80px; /* Offset to keep ~30% extending outside viewport */
+        height: 80%; /* Proportional height matching layout scale */
+        width: auto;
+        left: -105px; /* Offset to keep bleed ratio */
       }
     }
 
@@ -994,9 +995,10 @@
       .map-btn { width: 100%; box-sizing: border-box; justify-content: center; padding: 0.95rem 1.5rem; } /* larger tap area */
 
       .royal-elephant-bg {
-        width: 180px; /* Increased from 130px */
-        left: -55px; /* Offset to keep ~30% extending outside viewport */
-        opacity: 0.14;
+        height: 70%; /* Scale height appropriately on mobile screens */
+        width: auto;
+        left: -70px; /* Offset to keep bleed ratio */
+        opacity: 0.12; /* Reduced opacity on mobile for readability */
       }
     }
   </style>
