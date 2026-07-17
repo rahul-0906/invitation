@@ -1432,7 +1432,7 @@
       </button>
       <div class="audio-meta">
         <div class="audio-meta-title">Sita Kalyana Vaibhogame</div>
-        <div class="audio-meta-art">Nadaswaram &middot; Carnatic Classical</div>
+        <div class="audio-meta-art">Carnatic Classical</div>
       </div>
     </div>
   </section>
@@ -1610,7 +1610,7 @@
     var btn     = document.getElementById('audioBtn');
     var playIco = document.getElementById('playIco');
     var pauseIco = document.getElementById('pauseIco');
-    audio.volume = 0.20;
+    audio.volume = 0.15;
 
     function toggleAudio() {
       if (audio.paused) {
@@ -1642,7 +1642,7 @@
       if (audioStarted) return; 
 
       audio.muted = false;
-      audio.volume = 0.20;
+      audio.volume = 0.15;
       
       // Force unmuting and playing directly on first scroll gesture
       audio.play().then(function() {
