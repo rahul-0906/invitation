@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 180" fill="none">
+  <!-- Body, head crest, and flowing neck of the peacock -->
+  <path d="M 30,80 C 25,60 35,40 50,40 C 60,40 68,48 65,58 C 62,65 52,65 48,58 C 45,50 55,45 52,40" stroke="#C9973E" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+  <!-- Beak and head details -->
+  <path d="M 52,38 L 57,41 L 51,43" stroke="#C9973E" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+  <!-- Crest feathers on head -->
+  <path d="M 50,40 Q 52,30 55,30 M 50,40 Q 48,29 48,29 M 50,40 Q 45,32 42,33" stroke="#C9973E" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="55" cy="30" r="1.5" fill="#C9973E"/>
+  <circle cx="48" cy="29" r="1.5" fill="#C9973E"/>
+  <circle cx="42" cy="33" r="1.5" fill="#C9973E"/>
+  <!-- Eye -->
+  <circle cx="48" cy="45" r="1" fill="#C9973E"/>
+  <!-- Graceful breast and wing curves -->
+  <path d="M 30,80 C 40,90 55,90 60,75 C 65,60 58,52 50,52" stroke="#C9973E" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+  <path d="M 45,65 C 38,70 38,80 48,82 C 55,80 58,72 50,68" stroke="#C9973E" stroke-width="1" stroke-linecap="round" fill="none"/>
+  <!-- Long flowing tail feathers (arced downwards and outwards) -->
+  <path d="M 30,80 Q 20,110 30,140 Q 40,160 55,170" stroke="#C9973E" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+  <path d="M 35,85 Q 28,112 38,138 Q 48,155 60,162" stroke="#C9973E" stroke-width="1" stroke-linecap="round" fill="none"/>
+  <path d="M 40,90 Q 36,115 46,136 Q 56,150 65,154" stroke="#C9973E" stroke-width="0.8" stroke-linecap="round" fill="none"/>
+  <!-- Feather eyes (eyelets/mayilpeeli patterns) -->
+  <ellipse cx="55" cy="170" rx="4" ry="6" transform="rotate(-15 55 170)" stroke="#C9973E" stroke-width="1"/>
+  <circle cx="55" cy="170" r="1.5" fill="#C9973E"/>
+  
+  <ellipse cx="60" cy="162" rx="3.5" ry="5" transform="rotate(-20 60 162)" stroke="#C9973E" stroke-width="1"/>
+  <circle cx="60" cy="162" r="1" fill="#C9973E"/>
+
+  <ellipse cx="65" cy="154" rx="3" ry="4" transform="rotate(-25 65 154)" stroke="#C9973E" stroke-width="1"/>
+  <circle cx="65" cy="154" r="1" fill="#C9973E"/>
+  
+  <ellipse cx="30" cy="140" rx="3.5" ry="5" transform="rotate(-5 30 140)" stroke="#C9973E" stroke-width="0.8"/>
+  <circle cx="30" cy="140" r="1" fill="#C9973E"/>
+  
+  <ellipse cx="38" cy="138" rx="3" ry="4.5" transform="rotate(-10 38 138)" stroke="#C9973E" stroke-width="0.8"/>
+  <circle cx="38" cy="138" r="1" fill="#C9973E"/>
+</svg>

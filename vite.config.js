@@ -15,7 +15,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        poster: resolve(__dirname, 'poster.html'),
+        invitation: resolve(__dirname, 'invitation.html'),
       },
     },
   },

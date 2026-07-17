@@ -47,4 +47,4 @@ To point your custom domain `rahulwedssuruthi.in` to the Vercel deployment:
 
 ## Technical Details
 
-- **Clean URLs**: Clean URLs are enabled via [`vercel.json`](file:///e:/invitation/vercel.json). The `poster.html` file will be served cleanly at `https://rahulwedssuruthi.in/poster` rather than ending with `.html`.
+- **Clean URLs**: Clean URLs are enabled via [`vercel.json`](file:///e:/invitation/vercel.json). The `invitation.html` file will be served cleanly at `https://rahulwedssuruthi.in/invitation` rather than ending with `.html`.

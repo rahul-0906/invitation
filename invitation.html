@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kanaa Kanden Poster | Rahul &amp; Suruthi Wedding</title>
+  <title>Kanaa Kanden Invitation | Rahul &amp; Suruthi Wedding</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Tiro+Tamil&display=swap" rel="stylesheet" />
@@ -83,14 +83,14 @@
     }
 
     /* ========================
-       POSTER CONTAINER
+       INVITATION CONTAINER
        A4-ish portrait ratio (height compressed to reduce whitespace)
     =========================== */
-    .poster {
+    .invitation {
       position: relative;
       width: 680px;
       min-height: 860px;
-      background: #7B1A24;
+      background: radial-gradient(circle, #7D1A25 0%, #40050B 100%);
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -98,34 +98,60 @@
       box-shadow: 0 30px 80px rgba(0,0,0,0.6);
     }
 
+
+
     /* ========================
        BACKGROUND GOPURAM
     ======================== */
     .bg-gopuram {
       position: absolute;
-      right: -10px;
-      bottom: 0;
-      height: 85%;
-      opacity: 0.10;
+      right: -25px;
+      bottom: 25%;
+      height: 52%;
+      opacity: 0.22;
       pointer-events: none;
       z-index: 0;
     }
 
     .bg-gopuram-left {
       position: absolute;
-      left: -10px;
-      bottom: 0;
-      height: 65%;
-      opacity: 0.07;
+      left: -35px;
+      bottom: 18%;
+      height: 48%;
+      opacity: 0.22;
       pointer-events: none;
       z-index: 0;
       transform: scaleX(-1);
     }
 
+    .bg-elephant-left {
+      position: absolute;
+      left: -230px;
+      bottom: 6%;
+      height: 30%;
+      width: auto;
+      opacity: 0.08;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .bg-elephant-right {
+      position: absolute;
+      right: -230px;
+      bottom: 6%;
+      height: 30%;
+      width: auto;
+      opacity: 0.08;
+      pointer-events: none;
+      z-index: 0;
+      transform: scaleX(-1);
+    }
+
+
     /* ========================
-       POSTER CONTENT LAYERS
+       INVITATION CONTENT LAYERS
     ======================== */
-    .poster-content {
+    .invitation-content {
       position: relative;
       z-index: 1;
       width: 100%;
@@ -140,7 +166,7 @@
     ======================== */
     .top-band {
       width: 100%;
-      background: #5A1019;
+      background: transparent;
       border-bottom: 2px solid #C9973E;
       padding: 0.7rem 2.5rem;
       text-align: center;
@@ -401,7 +427,7 @@
     /* ========================
        HASHTAG
     ======================== */
-    .poster-hashtag {
+    .invitation-hashtag {
       font-family: 'Great Vibes', cursive;
       font-size: 2rem;
       color: #F0D898;
@@ -415,7 +441,7 @@
     ======================== */
     .bottom-band {
       width: 100%;
-      background: #5A1019;
+      background: transparent;
       border-top: 2px solid #C9973E;
       padding: 0.7rem 2.5rem;
       text-align: center;
@@ -452,120 +478,166 @@
     ======================== */
     @media (max-width: 720px) {
       body { padding: 0; background: #7B1A24; }
-      .poster { width: 100%; min-height: 100vh; box-shadow: none; }
+      .invitation { width: 100%; min-height: 100vh; box-shadow: none; }
       .kanaa-kanden { font-size: 3rem; }
       .groom-name, .bride-name { font-size: 1.4rem; }
       .events-row { flex-direction: column; }
+      .bg-elephant-right { display: none; }
+      .bg-elephant-left { left: -110px; opacity: 0.08; width: 260px; height: auto; }
+      .bg-gopuram { display: none; }
+      .bg-gopuram-left { left: -50px; opacity: 0.12; bottom: 20%; height: 42%; }
     }
 
     @media print {
       body { background: none; padding: 0; }
-      .poster { box-shadow: none; width: 100%; }
+      .invitation { box-shadow: none; width: 100%; }
     }
   </style>
 </head>
 <body>
 
-<div class="poster">
+<div class="invitation">
 
-  <!-- Corner Ornaments -->
-  <svg class="corner-orn tl" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M5 5 L5 35 Q5 5 35 5 Z" fill="none" stroke="#C9973E" stroke-width="1"/>
-    <path d="M5 5 L30 5" stroke="#C9973E" stroke-width="1.2"/>
-    <path d="M5 5 L5 30" stroke="#C9973E" stroke-width="1.2"/>
-    <circle cx="5" cy="5" r="2.5" fill="#C9973E"/>
-    <path d="M15 5 Q5 5 5 15" fill="none" stroke="#C9973E" stroke-width="0.8"/>
-    <path d="M25 5 Q5 5 5 25" fill="none" stroke="#C9973E" stroke-width="0.5" opacity="0.5"/>
-    <circle cx="30" cy="5" r="1.5" fill="#C9973E" opacity="0.6"/>
-    <circle cx="5" cy="30" r="1.5" fill="#C9973E" opacity="0.6"/>
-  </svg>
-  <svg class="corner-orn tr" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M5 5 L5 35 Q5 5 35 5 Z" fill="none" stroke="#C9973E" stroke-width="1"/>
-    <path d="M5 5 L30 5" stroke="#C9973E" stroke-width="1.2"/>
-    <path d="M5 5 L5 30" stroke="#C9973E" stroke-width="1.2"/>
-    <circle cx="5" cy="5" r="2.5" fill="#C9973E"/>
-    <path d="M15 5 Q5 5 5 15" fill="none" stroke="#C9973E" stroke-width="0.8"/>
-    <path d="M25 5 Q5 5 5 25" fill="none" stroke="#C9973E" stroke-width="0.5" opacity="0.5"/>
-    <circle cx="30" cy="5" r="1.5" fill="#C9973E" opacity="0.6"/>
-    <circle cx="5" cy="30" r="1.5" fill="#C9973E" opacity="0.6"/>
-  </svg>
-  <svg class="corner-orn bl" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M5 5 L5 35 Q5 5 35 5 Z" fill="none" stroke="#C9973E" stroke-width="1"/>
-    <path d="M5 5 L30 5" stroke="#C9973E" stroke-width="1.2"/>
-    <path d="M5 5 L5 30" stroke="#C9973E" stroke-width="1.2"/>
-    <circle cx="5" cy="5" r="2.5" fill="#C9973E"/>
-    <path d="M15 5 Q5 5 5 15" fill="none" stroke="#C9973E" stroke-width="0.8"/>
-    <path d="M25 5 Q5 5 5 25" fill="none" stroke="#C9973E" stroke-width="0.5" opacity="0.5"/>
-    <circle cx="30" cy="5" r="1.5" fill="#C9973E" opacity="0.6"/>
-    <circle cx="5" cy="30" r="1.5" fill="#C9973E" opacity="0.6"/>
-  </svg>
-  <svg class="corner-orn br" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M5 5 L5 35 Q5 5 35 5 Z" fill="none" stroke="#C9973E" stroke-width="1"/>
-    <path d="M5 5 L30 5" stroke="#C9973E" stroke-width="1.2"/>
-    <path d="M5 5 L5 30" stroke="#C9973E" stroke-width="1.2"/>
-    <circle cx="5" cy="5" r="2.5" fill="#C9973E"/>
-    <path d="M15 5 Q5 5 5 15" fill="none" stroke="#C9973E" stroke-width="0.8"/>
-    <path d="M25 5 Q5 5 5 25" fill="none" stroke="#C9973E" stroke-width="0.5" opacity="0.5"/>
-    <circle cx="30" cy="5" r="1.5" fill="#C9973E" opacity="0.6"/>
-    <circle cx="5" cy="30" r="1.5" fill="#C9973E" opacity="0.6"/>
-  </svg>
+  <!-- Corner Ornaments (Inlined for perfect download rendering) -->
+  <div class="corner-orn tl">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70" fill="none" style="width: 100%; height: 100%;">
+      <path d="M5 35 L5 5 L35 5" stroke="#C9973E" stroke-width="1"/>
+      <path d="M5 35 Q5 5 35 5" fill="none" stroke="#C9973E" stroke-width="1"/>
+      <path d="M5 5 L30 5" stroke="#C9973E" stroke-width="1.2"/>
+      <path d="M5 5 L5 30" stroke="#C9973E" stroke-width="1.2"/>
+      <circle cx="5" cy="5" r="2.5" fill="#C9973E"/>
+      <path d="M15 5 Q5 5 5 15" fill="none" stroke="#C9973E" stroke-width="0.8"/>
+      <path d="M25 5 Q5 5 5 25" fill="none" stroke="#C9973E" stroke-width="0.5" opacity="0.5"/>
+      <circle cx="30" cy="5" r="1.5" fill="#C9973E" opacity="0.6"/>
+      <circle cx="5" cy="30" r="1.5" fill="#C9973E" opacity="0.6"/>
+    </svg>
+  </div>
+  <div class="corner-orn tr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70" fill="none" style="width: 100%; height: 100%;">
+      <path d="M5 35 L5 5 L35 5" stroke="#C9973E" stroke-width="1"/>
+      <path d="M5 35 Q5 5 35 5" fill="none" stroke="#C9973E" stroke-width="1"/>
+      <path d="M5 5 L30 5" stroke="#C9973E" stroke-width="1.2"/>
+      <path d="M5 5 L5 30" stroke="#C9973E" stroke-width="1.2"/>
+      <circle cx="5" cy="5" r="2.5" fill="#C9973E"/>
+      <path d="M15 5 Q5 5 5 15" fill="none" stroke="#C9973E" stroke-width="0.8"/>
+      <path d="M25 5 Q5 5 5 25" fill="none" stroke="#C9973E" stroke-width="0.5" opacity="0.5"/>
+      <circle cx="30" cy="5" r="1.5" fill="#C9973E" opacity="0.6"/>
+      <circle cx="5" cy="30" r="1.5" fill="#C9973E" opacity="0.6"/>
+    </svg>
+  </div>
+  <div class="corner-orn bl">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70" fill="none" style="width: 100%; height: 100%;">
+      <path d="M5 35 L5 5 L35 5" stroke="#C9973E" stroke-width="1"/>
+      <path d="M5 35 Q5 5 35 5" fill="none" stroke="#C9973E" stroke-width="1"/>
+      <path d="M5 5 L30 5" stroke="#C9973E" stroke-width="1.2"/>
+      <path d="M5 5 L5 30" stroke="#C9973E" stroke-width="1.2"/>
+      <circle cx="5" cy="5" r="2.5" fill="#C9973E"/>
+      <path d="M15 5 Q5 5 5 15" fill="none" stroke="#C9973E" stroke-width="0.8"/>
+      <path d="M25 5 Q5 5 5 25" fill="none" stroke="#C9973E" stroke-width="0.5" opacity="0.5"/>
+      <circle cx="30" cy="5" r="1.5" fill="#C9973E" opacity="0.6"/>
+      <circle cx="5" cy="30" r="1.5" fill="#C9973E" opacity="0.6"/>
+    </svg>
+  </div>
+  <div class="corner-orn br">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70" fill="none" style="width: 100%; height: 100%;">
+      <path d="M5 35 L5 5 L35 5" stroke="#C9973E" stroke-width="1"/>
+      <path d="M5 35 Q5 5 35 5" fill="none" stroke="#C9973E" stroke-width="1"/>
+      <path d="M5 5 L30 5" stroke="#C9973E" stroke-width="1.2"/>
+      <path d="M5 5 L5 30" stroke="#C9973E" stroke-width="1.2"/>
+      <circle cx="5" cy="5" r="2.5" fill="#C9973E"/>
+      <path d="M15 5 Q5 5 5 15" fill="none" stroke="#C9973E" stroke-width="0.8"/>
+      <path d="M25 5 Q5 5 5 25" fill="none" stroke="#C9973E" stroke-width="0.5" opacity="0.5"/>
+      <circle cx="30" cy="5" r="1.5" fill="#C9973E" opacity="0.6"/>
+      <circle cx="5" cy="30" r="1.5" fill="#C9973E" opacity="0.6"/>
+    </svg>
+  </div>
 
-  <!-- Background Gopuram Silhouette Right -->
-  <svg class="bg-gopuram" viewBox="0 0 160 720" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g stroke="#F5EFE6" stroke-width="1.2" fill="none" stroke-linecap="round">
-      <ellipse cx="80" cy="14" rx="8" ry="12"/>
-      <line x1="80" y1="26" x2="80" y2="36"/>
-      <polygon points="80,36 56,62 104,62"/>
-      <polygon points="80,40 62,60 98,60" fill="rgba(245,239,230,0.1)"/>
-      <rect x="50" y="62" width="60" height="24" rx="2"/>
-      <line x1="50" y1="74" x2="110" y2="74"/>
-      <rect x="54" y="64" width="10" height="12" rx="2"/>
-      <rect x="68" y="64" width="10" height="12" rx="2"/>
-      <rect x="82" y="64" width="10" height="12" rx="2"/>
-      <rect x="96" y="64" width="10" height="12" rx="2"/>
-      <rect x="38" y="86" width="84" height="28" rx="2"/>
-      <line x1="38" y1="100" x2="122" y2="100"/>
-      <rect x="44" y="88" width="12" height="14" rx="1"/>
-      <rect x="60" y="88" width="12" height="14" rx="1"/>
-      <rect x="76" y="88" width="12" height="14" rx="1"/>
-      <rect x="92" y="88" width="12" height="14" rx="1"/>
-      <rect x="108" y="88" width="8"  height="14" rx="1"/>
-      <rect x="28" y="114" width="104" height="30" rx="2"/>
-      <line x1="28" y1="129" x2="132" y2="129"/>
-      <rect x="20" y="144" width="120" height="32" rx="2"/>
-      <line x1="20" y1="160" x2="140" y2="160"/>
-      <rect x="10" y="176" width="140" height="200" rx="2"/>
-      <line x1="10" y1="192" x2="150" y2="192"/>
-      <line x1="10" y1="208" x2="150" y2="208"/>
-      <rect x="17" y="200" width="22" height="248" rx="2"/>
-      <circle cx="28" cy="212" r="5"/>
-      <rect x="132" y="200" width="22" height="248" rx="2"/>
-      <circle cx="143" cy="212" r="5"/>
-      <rect x="0" y="454" width="160" height="44"/>
-    </g>
-  </svg>
+  <!-- Background Gopuram Silhouettes (Inlined for perfect download rendering) -->
+  <div class="bg-gopuram">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 720" fill="none" style="width: 100%; height: 100%;">
+      <g stroke="#C9973E" stroke-width="1.2" fill="none" stroke-linecap="round">
+        <ellipse cx="80" cy="14" rx="8" ry="12"/>
+        <line x1="80" y1="26" x2="80" y2="36"/>
+        <polygon points="80,36 56,62 104,62"/>
+        <polygon points="80,40 62,60 98,60" fill="rgba(245,239,230,0.1)"/>
+        <rect x="50" y="62" width="60" height="24" rx="2"/>
+        <line x1="50" y1="74" x2="110" y2="74"/>
+        <rect x="54" y="64" width="10" height="12" rx="2"/>
+        <rect x="68" y="64" width="10" height="12" rx="2"/>
+        <rect x="82" y="64" width="10" height="12" rx="2"/>
+        <rect x="96" y="64" width="10" height="12" rx="2"/>
+        <rect x="38" y="86" width="84" height="28" rx="2"/>
+        <line x1="38" y1="100" x2="122" y2="100"/>
+        <rect x="44" y="88" width="12" height="14" rx="1"/>
+        <rect x="60" y="88" width="12" height="14" rx="1"/>
+        <rect x="76" y="88" width="12" height="14" rx="1"/>
+        <rect x="92" y="88" width="12" height="14" rx="1"/>
+        <rect x="108" y="88" width="8"  height="14" rx="1"/>
+        <rect x="28" y="114" width="104" height="30" rx="2"/>
+        <line x1="28" y1="129" x2="132" y2="129"/>
+        <rect x="20" y="144" width="120" height="32" rx="2"/>
+        <line x1="20" y1="160" x2="140" y2="160"/>
+        <rect x="10" y="176" width="140" height="200" rx="2"/>
+        <line x1="10" y1="192" x2="150" y2="192"/>
+        <line x1="10" y1="208" x2="150" y2="208"/>
+        <rect x="17" y="200" width="22" height="248" rx="2"/>
+        <circle cx="28" cy="212" r="5"/>
+        <rect x="132" y="200" width="22" height="248" rx="2"/>
+        <circle cx="143" cy="212" r="5"/>
+        <rect x="0" y="454" width="160" height="44"/>
+      </g>
+    </svg>
+  </div>
+  <div class="bg-gopuram-left">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 720" fill="none" style="width: 100%; height: 100%;">
+      <g stroke="#C9973E" stroke-width="1.2" fill="none" stroke-linecap="round">
+        <ellipse cx="80" cy="14" rx="8" ry="12"/>
+        <line x1="80" y1="26" x2="80" y2="36"/>
+        <polygon points="80,36 56,62 104,62"/>
+        <polygon points="80,40 62,60 98,60" fill="rgba(245,239,230,0.1)"/>
+        <rect x="50" y="62" width="60" height="24" rx="2"/>
+        <line x1="50" y1="74" x2="110" y2="74"/>
+        <rect x="54" y="64" width="10" height="12" rx="2"/>
+        <rect x="68" y="64" width="10" height="12" rx="2"/>
+        <rect x="82" y="64" width="10" height="12" rx="2"/>
+        <rect x="96" y="64" width="10" height="12" rx="2"/>
+        <rect x="38" y="86" width="84" height="28" rx="2"/>
+        <line x1="38" y1="100" x2="122" y2="100"/>
+        <rect x="44" y="88" width="12" height="14" rx="1"/>
+        <rect x="60" y="88" width="12" height="14" rx="1"/>
+        <rect x="76" y="88" width="12" height="14" rx="1"/>
+        <rect x="92" y="88" width="12" height="14" rx="1"/>
+        <rect x="108" y="88" width="8"  height="14" rx="1"/>
+        <rect x="28" y="114" width="104" height="30" rx="2"/>
+        <line x1="28" y1="129" x2="132" y2="129"/>
+        <rect x="20" y="144" width="120" height="32" rx="2"/>
+        <line x1="20" y1="160" x2="140" y2="160"/>
+        <rect x="10" y="176" width="140" height="200" rx="2"/>
+        <line x1="10" y1="192" x2="150" y2="192"/>
+        <line x1="10" y1="208" x2="150" y2="208"/>
+        <rect x="17" y="200" width="22" height="248" rx="2"/>
+        <circle cx="28" cy="212" r="5"/>
+        <rect x="132" y="200" width="22" height="248" rx="2"/>
+        <circle cx="143" cy="212" r="5"/>
+        <rect x="0" y="454" width="160" height="44"/>
+      </g>
+    </svg>
+  </div>
 
-  <!-- Background Gopuram Silhouette Left (mirrored) -->
-  <svg class="bg-gopuram-left" viewBox="0 0 160 720" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g stroke="#F5EFE6" stroke-width="1.2" fill="none" stroke-linecap="round">
-      <ellipse cx="80" cy="14" rx="8" ry="12"/>
-      <line x1="80" y1="26" x2="80" y2="36"/>
-      <polygon points="80,36 56,62 104,62"/>
-      <rect x="50" y="62" width="60" height="24" rx="2"/>
-      <rect x="38" y="86" width="84" height="28" rx="2"/>
-      <rect x="28" y="114" width="104" height="30" rx="2"/>
-      <rect x="20" y="144" width="120" height="32" rx="2"/>
-      <rect x="10" y="176" width="140" height="200" rx="2"/>
-      <rect x="0" y="454" width="160" height="44"/>
-    </g>
-  </svg>
+  <!-- Background Elephant Watermarks -->
+  <img class="bg-elephant-left" src="Elephant Invitation.png" alt="" />
+  <img class="bg-elephant-right" src="Elephant Invitation.png" alt="" />
+
+
+
+
 
   <!-- TOP BAND -->
   <div class="top-band">
     <span class="top-band-text">You are warmly invited to celebrate</span>
   </div>
 
-  <div class="poster-content">
+  <div class="invitation-content">
 
     <!-- EVENT TAG -->
     <p class="event-tag">Kanaa Kanden &nbsp;·&nbsp; An Andal Kalyanam</p>
@@ -594,11 +666,6 @@
       <div class="bride-parent">Daughter of S. Rajendran &amp; R. Rajeswari</div>
     </div>
 
-    <!-- VERSE STRIP -->
-    <div class="verse-strip">
-      <p class="verse-ta-text">வாரணம் ஆயிரம் சூழ வலம் செய்து<br/>நாரண நம்பி நடக்கின்றான் என்று எதிர்<br/>பூரண பொற்குடம் வைத்துப் புறம் எங்கும்<br/>தோரணம் நாட்டக் கனாக்கண்டேன் தோழி நான்</p>
-    </div>
-
     <!-- GOLD DIVIDER -->
     <div class="gold-divider"><span class="orn">❖</span></div>
 
@@ -613,23 +680,23 @@
     </div>
 
     <!-- WEBSITE QR SECTION -->
-    <div class="qr-section-poster" style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 0.5rem; margin-bottom: 1.5rem;">
+    <div class="qr-section-invitation" style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 0.5rem; margin-bottom: 1.5rem;">
       <span style="font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: 0.2em; color: #E2C07C; text-transform: uppercase; margin-bottom: 0.4rem;">Visit our wedding website</span>
       <div id="websiteQR" style="padding: 6px; background: white; border-radius: 4px; display: inline-block;"></div>
       <span style="font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.15em; color: #F5EFE6; margin-top: 0.4rem;">rahulwedssuruthi.in</span>
     </div>
 
     <!-- HASHTAG -->
-    <p class="poster-hashtag" style="margin-bottom: 1rem;">#RahulWedsSuruthi</p>
+    <p class="invitation-hashtag" style="margin-bottom: 1rem;">#RahulWedsSuruthi</p>
 
-  </div><!-- /poster-content -->
+  </div><!-- /invitation-content -->
 
   <!-- BOTTOM BAND -->
   <div class="bottom-band">
-    <span class="bottom-band-text">September 12 &amp; 13 &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; Tenkasi</span>
+    <span class="bottom-band-text">With love, Rahul &amp; Suruthi. &copy; 2026</span>
   </div>
 
-</div><!-- /poster -->
+</div><!-- /invitation -->
 
 <!-- Download Toolbar -->
 <div class="download-bar" id="downloadBar">
@@ -649,7 +716,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
   var SITE_URL = 'https://rahulwedssuruthi.in';
-  var poster = document.querySelector('.poster');
+  var invitation = document.querySelector('.invitation');
 
   // Generate website QR on load
   window.addEventListener('load', function() {
@@ -679,16 +746,16 @@
     setLoading(btn, 'Generating…');
     document.getElementById('downloadBar').style.display = 'none';
 
-    html2canvas(poster, {
+    html2canvas(invitation, {
       scale: 3,
       useCORS: true,
       allowTaint: false,
-      backgroundColor: null,
+      backgroundColor: '#5C0C13',
       logging: false
     }).then(function(canvas) {
       document.getElementById('downloadBar').style.display = 'flex';
       var link = document.createElement('a');
-      link.download = 'RahulWedsSuruthi-Poster.png';
+      link.download = 'RahulWedsSuruthi-Invitation.png';
       link.href = canvas.toDataURL('image/png');
       link.click();
       resetBtn(btn, '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg> Download PNG');
@@ -704,17 +771,17 @@
     setLoading(btn, 'Generating…');
     document.getElementById('downloadBar').style.display = 'none';
 
-    html2canvas(poster, {
+    html2canvas(invitation, {
       scale: 3,
       useCORS: true,
       allowTaint: false,
-      backgroundColor: null,
+      backgroundColor: '#5C0C13',
       logging: false
     }).then(function(canvas) {
       document.getElementById('downloadBar').style.display = 'flex';
       var imgData = canvas.toDataURL('image/jpeg', 1.0);
-      var w = poster.offsetWidth;
-      var h = poster.offsetHeight;
+      var w = invitation.offsetWidth;
+      var h = invitation.offsetHeight;
       var { jsPDF } = window.jspdf;
       var pdf = new jsPDF({
         orientation: h > w ? 'portrait' : 'landscape',
@@ -726,7 +793,7 @@
       // Make QR code clickable inside exported PDF
       var qrEl = document.getElementById('websiteQR');
       if (qrEl) {
-        var pr = poster.getBoundingClientRect();
+        var pr = invitation.getBoundingClientRect();
         var qr = qrEl.getBoundingClientRect();
         var scaleX = w / pr.width;
         var scaleY = h / pr.height;
@@ -739,7 +806,7 @@
         );
       }
 
-      pdf.save('RahulWedsSuruthi-Poster.pdf');
+      pdf.save('RahulWedsSuruthi-Invitation.pdf');
       resetBtn(btn, '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8L14 2zM14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg> Download PDF');
     }).catch(function(err) {
       document.getElementById('downloadBar').style.display = 'flex';
