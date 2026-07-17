@@ -106,7 +106,6 @@
       right: -10px;
       bottom: 0;
       height: 85%;
-      opacity: 0.10;
       pointer-events: none;
       z-index: 0;
     }
@@ -116,10 +115,20 @@
       left: -10px;
       bottom: 0;
       height: 65%;
-      opacity: 0.07;
       pointer-events: none;
       z-index: 0;
       transform: scaleX(-1);
+    }
+
+    .bg-elephant-poster {
+      position: absolute;
+      left: -35px;
+      bottom: 60px;
+      height: 38%;
+      width: auto;
+      opacity: 0.08;
+      pointer-events: none;
+      z-index: 0;
     }
 
     /* ========================
@@ -439,7 +448,6 @@
       position: absolute;
       width: 70px;
       height: 70px;
-      opacity: 0.5;
       z-index: 2;
     }
     .corner-orn.tl { top: 50px; left: 12px; }
@@ -469,7 +477,7 @@
 <div class="poster">
 
   <!-- Corner Ornaments -->
-  <svg class="corner-orn tl" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg class="corner-orn tl" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" opacity="0.5">
     <path d="M5 5 L5 35 Q5 5 35 5 Z" fill="none" stroke="#C9973E" stroke-width="1"/>
     <path d="M5 5 L30 5" stroke="#C9973E" stroke-width="1.2"/>
     <path d="M5 5 L5 30" stroke="#C9973E" stroke-width="1.2"/>
@@ -479,7 +487,7 @@
     <circle cx="30" cy="5" r="1.5" fill="#C9973E" opacity="0.6"/>
     <circle cx="5" cy="30" r="1.5" fill="#C9973E" opacity="0.6"/>
   </svg>
-  <svg class="corner-orn tr" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg class="corner-orn tr" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" opacity="0.5">
     <path d="M5 5 L5 35 Q5 5 35 5 Z" fill="none" stroke="#C9973E" stroke-width="1"/>
     <path d="M5 5 L30 5" stroke="#C9973E" stroke-width="1.2"/>
     <path d="M5 5 L5 30" stroke="#C9973E" stroke-width="1.2"/>
@@ -489,7 +497,7 @@
     <circle cx="30" cy="5" r="1.5" fill="#C9973E" opacity="0.6"/>
     <circle cx="5" cy="30" r="1.5" fill="#C9973E" opacity="0.6"/>
   </svg>
-  <svg class="corner-orn bl" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg class="corner-orn bl" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" opacity="0.5">
     <path d="M5 5 L5 35 Q5 5 35 5 Z" fill="none" stroke="#C9973E" stroke-width="1"/>
     <path d="M5 5 L30 5" stroke="#C9973E" stroke-width="1.2"/>
     <path d="M5 5 L5 30" stroke="#C9973E" stroke-width="1.2"/>
@@ -499,7 +507,7 @@
     <circle cx="30" cy="5" r="1.5" fill="#C9973E" opacity="0.6"/>
     <circle cx="5" cy="30" r="1.5" fill="#C9973E" opacity="0.6"/>
   </svg>
-  <svg class="corner-orn br" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg class="corner-orn br" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" opacity="0.5">
     <path d="M5 5 L5 35 Q5 5 35 5 Z" fill="none" stroke="#C9973E" stroke-width="1"/>
     <path d="M5 5 L30 5" stroke="#C9973E" stroke-width="1.2"/>
     <path d="M5 5 L5 30" stroke="#C9973E" stroke-width="1.2"/>
@@ -511,7 +519,7 @@
   </svg>
 
   <!-- Background Gopuram Silhouette Right -->
-  <svg class="bg-gopuram" viewBox="0 0 160 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg class="bg-gopuram" width="160" height="720" viewBox="0 0 160 720" fill="none" xmlns="http://www.w3.org/2000/svg" opacity="0.10">
     <g stroke="#F5EFE6" stroke-width="1.2" fill="none" stroke-linecap="round">
       <ellipse cx="80" cy="14" rx="8" ry="12"/>
       <line x1="80" y1="26" x2="80" y2="36"/>
@@ -546,7 +554,7 @@
   </svg>
 
   <!-- Background Gopuram Silhouette Left (mirrored) -->
-  <svg class="bg-gopuram-left" viewBox="0 0 160 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg class="bg-gopuram-left" width="160" height="720" viewBox="0 0 160 720" fill="none" xmlns="http://www.w3.org/2000/svg" opacity="0.07">
     <g stroke="#F5EFE6" stroke-width="1.2" fill="none" stroke-linecap="round">
       <ellipse cx="80" cy="14" rx="8" ry="12"/>
       <line x1="80" y1="26" x2="80" y2="36"/>
@@ -559,6 +567,9 @@
       <rect x="0" y="454" width="160" height="44"/>
     </g>
   </svg>
+
+  <!-- Background Elephant Silhouette Left -->
+  <img src="Elephant.png" class="bg-elephant-poster" alt="Traditional Royal Elephant Background" aria-hidden="true" />
 
   <!-- TOP BAND -->
   <div class="top-band">
