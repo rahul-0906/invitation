@@ -1610,7 +1610,7 @@
     var btn     = document.getElementById('audioBtn');
     var playIco = document.getElementById('playIco');
     var pauseIco = document.getElementById('pauseIco');
-    audio.volume = 0.22;
+    audio.volume = 0.20;
 
     function toggleAudio() {
       if (audio.paused) {
@@ -1642,7 +1642,7 @@
       if (audioStarted) return; 
 
       audio.muted = false;
-      audio.volume = 0.22;
+      audio.volume = 0.20;
       
       // Force unmuting and playing directly on first scroll gesture
       audio.play().then(function() {
