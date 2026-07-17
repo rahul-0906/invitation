@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kanaa Kanden Poster | Rahul &amp; Suruthi Wedding</title>
+  <title>Kanaa Kanden Invitation | Rahul &amp; Suruthi Wedding</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Tiro+Tamil&display=swap" rel="stylesheet" />
@@ -83,10 +83,10 @@
     }
 
     /* ========================
-       POSTER CONTAINER
+       INVITATION CONTAINER
        A4-ish portrait ratio (height compressed to reduce whitespace)
     =========================== */
-    .poster {
+    .invitation {
       position: relative;
       width: 680px;
       min-height: 860px;
@@ -122,7 +122,7 @@
       transform: scaleX(-1);
     }
 
-    .bg-elephant-poster {
+    .bg-elephant-invitation {
       position: absolute;
       left: -35px;
       bottom: 60px;
@@ -134,9 +134,9 @@
     }
 
     /* ========================
-       POSTER CONTENT LAYERS
+       INVITATION CONTENT LAYERS
     ======================== */
-    .poster-content {
+    .invitation-content {
       position: relative;
       z-index: 1;
       width: 100%;
@@ -412,7 +412,7 @@
     /* ========================
        HASHTAG
     ======================== */
-    .poster-hashtag {
+    .invitation-hashtag {
       font-family: 'Great Vibes', cursive;
       font-size: 2rem;
       color: #F0D898;
@@ -463,7 +463,7 @@
     ======================== */
     @media (max-width: 720px) {
       body { padding: 0; background: #7B1A24; }
-      .poster { width: 100%; min-height: 100vh; box-shadow: none; }
+      .invitation { width: 100%; min-height: 100vh; box-shadow: none; }
       .kanaa-kanden { font-size: 3rem; }
       .groom-name, .bride-name { font-size: 1.4rem; }
       .events-row { flex-direction: column; }
@@ -471,13 +471,13 @@
 
     @media print {
       body { background: none; padding: 0; }
-      .poster { box-shadow: none; width: 100%; }
+      .invitation { box-shadow: none; width: 100%; }
     }
   </style>
 </head>
 <body>
 
-<div class="poster">
+<div class="invitation">
 
   <!-- Corner Ornaments -->
   <img class="corner-orn tl" src="corner.svg" alt="" />
@@ -490,14 +490,14 @@
   <img class="bg-gopuram-left" src="gopuram.svg" alt="" />
 
   <!-- Background Elephant Silhouette Left -->
-  <img src="Elephant.png" class="bg-elephant-poster" alt="Traditional Royal Elephant Background" aria-hidden="true" />
+  <img src="Elephant.png" class="bg-elephant-invitation" alt="Traditional Royal Elephant Background" aria-hidden="true" />
 
   <!-- TOP BAND -->
   <div class="top-band">
     <span class="top-band-text">You are warmly invited to celebrate</span>
   </div>
 
-  <div class="poster-content">
+  <div class="invitation-content">
 
     <!-- EVENT TAG -->
     <p class="event-tag">Kanaa Kanden &nbsp;·&nbsp; An Andal Kalyanam</p>
@@ -545,23 +545,23 @@
     </div>
 
     <!-- WEBSITE QR SECTION -->
-    <div class="qr-section-poster" style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 0.5rem; margin-bottom: 1.5rem;">
+    <div class="qr-section-invitation" style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 0.5rem; margin-bottom: 1.5rem;">
       <span style="font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: 0.2em; color: #E2C07C; text-transform: uppercase; margin-bottom: 0.4rem;">Visit our wedding website</span>
       <div id="websiteQR" style="padding: 6px; background: white; border-radius: 4px; display: inline-block;"></div>
       <span style="font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.15em; color: #F5EFE6; margin-top: 0.4rem;">rahulwedssuruthi.in</span>
     </div>
 
     <!-- HASHTAG -->
-    <p class="poster-hashtag" style="margin-bottom: 1rem;">#RahulWedsSuruthi</p>
+    <p class="invitation-hashtag" style="margin-bottom: 1rem;">#RahulWedsSuruthi</p>
 
-  </div><!-- /poster-content -->
+  </div><!-- /invitation-content -->
 
   <!-- BOTTOM BAND -->
   <div class="bottom-band">
     <span class="bottom-band-text">September 12 &amp; 13 &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; Tenkasi</span>
   </div>
 
-</div><!-- /poster -->
+</div><!-- /invitation -->
 
 <!-- Download Toolbar -->
 <div class="download-bar" id="downloadBar">
@@ -581,7 +581,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
   var SITE_URL = 'https://rahulwedssuruthi.in';
-  var poster = document.querySelector('.poster');
+  var invitation = document.querySelector('.invitation');
 
   // Generate website QR on load
   window.addEventListener('load', function() {
@@ -611,7 +611,7 @@
     setLoading(btn, 'Generating…');
     document.getElementById('downloadBar').style.display = 'none';
 
-    html2canvas(poster, {
+    html2canvas(invitation, {
       scale: 3,
       useCORS: true,
       allowTaint: false,
@@ -620,7 +620,7 @@
     }).then(function(canvas) {
       document.getElementById('downloadBar').style.display = 'flex';
       var link = document.createElement('a');
-      link.download = 'RahulWedsSuruthi-Poster.png';
+      link.download = 'RahulWedsSuruthi-Invitation.png';
       link.href = canvas.toDataURL('image/png');
       link.click();
       resetBtn(btn, '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg> Download PNG');
@@ -636,7 +636,7 @@
     setLoading(btn, 'Generating…');
     document.getElementById('downloadBar').style.display = 'none';
 
-    html2canvas(poster, {
+    html2canvas(invitation, {
       scale: 3,
       useCORS: true,
       allowTaint: false,
@@ -645,8 +645,8 @@
     }).then(function(canvas) {
       document.getElementById('downloadBar').style.display = 'flex';
       var imgData = canvas.toDataURL('image/jpeg', 1.0);
-      var w = poster.offsetWidth;
-      var h = poster.offsetHeight;
+      var w = invitation.offsetWidth;
+      var h = invitation.offsetHeight;
       var { jsPDF } = window.jspdf;
       var pdf = new jsPDF({
         orientation: h > w ? 'portrait' : 'landscape',
@@ -658,7 +658,7 @@
       // Make QR code clickable inside exported PDF
       var qrEl = document.getElementById('websiteQR');
       if (qrEl) {
-        var pr = poster.getBoundingClientRect();
+        var pr = invitation.getBoundingClientRect();
         var qr = qrEl.getBoundingClientRect();
         var scaleX = w / pr.width;
         var scaleY = h / pr.height;
@@ -671,7 +671,7 @@
         );
       }
 
-      pdf.save('RahulWedsSuruthi-Poster.pdf');
+      pdf.save('RahulWedsSuruthi-Invitation.pdf');
       resetBtn(btn, '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8L14 2zM14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg> Download PDF');
     }).catch(function(err) {
       document.getElementById('downloadBar').style.display = 'flex';
