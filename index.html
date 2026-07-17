@@ -1602,8 +1602,12 @@
     var pauseIco = document.getElementById('pauseIco');
     audio.volume = 0.10;
 
+    var userManuallyPaused = false;
+    var autoPausedByScroll = false;
+
     function toggleAudio() {
       if (audio.paused) {
+        userManuallyPaused = false;
         audio.play()
           .then(function () {
             playIco.style.display  = 'none';
@@ -1614,6 +1618,8 @@
             console.warn('Playback blocked or missing audio file:', err);
           });
       } else {
+        userManuallyPaused = true;
+        autoPausedByScroll = false;
         audio.pause();
         playIco.style.display  = 'block';
         pauseIco.style.display = 'none';
@@ -1664,6 +1670,43 @@
       audioStarted = true;
       origToggleAudio();
     };
+
+    /* ── Auto-Pause on Footer Intersection ────────────── */
+    (function () {
+      var footer = document.querySelector('footer');
+      if (!footer) return;
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            // Footer visible -> Auto-pause if playing
+            if (!audio.paused) {
+              audio.pause();
+              autoPausedByScroll = true;
+              playIco.style.display  = 'block';
+              pauseIco.style.display = 'none';
+              btn.setAttribute('aria-label', 'Play background music');
+            }
+          } else {
+            // Footer hidden -> Resume if auto-paused and user hasn't manually paused
+            if (autoPausedByScroll && !userManuallyPaused && audioStarted) {
+              audio.play()
+                .then(function () {
+                  playIco.style.display  = 'none';
+                  pauseIco.style.display = 'block';
+                  btn.setAttribute('aria-label', 'Pause background music');
+                  autoPausedByScroll = false;
+                })
+                .catch(function (err) {
+                  console.warn('Auto-resume failed:', err);
+                });
+            }
+          }
+        });
+      }, { threshold: 0.1 });
+
+      observer.observe(footer);
+    }());
   </script>
 
 </body>
